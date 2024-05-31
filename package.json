@@ -11,6 +11,8 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
     "@nx/devkit": "19.1.1",
     "@nx/eslint": "19.1.1",
     "@nx/eslint-plugin": "19.1.1",
@@ -18,11 +20,13 @@
     "@nx/js": "19.1.1",
     "@nx/next": "19.1.1",
     "@nx/playwright": "19.1.1",
+    "@nx/react": "19.1.1",
     "@nx/workspace": "19.1.1",
     "@playwright/test": "^1.36.0",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
+    "@testing-library/react": "15.0.6",
     "@types/jest": "^29.4.0",
     "@types/node": "18.16.9",
     "@types/react": "18.3.1",
