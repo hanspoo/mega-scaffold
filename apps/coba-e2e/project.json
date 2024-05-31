@@ -1,0 +1,9 @@
+{
+  "name": "coba-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/coba-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["coba"],
+  "// targets": "to see all targets run: nx show project coba-e2e --web",
+  "targets": {}
+}
