@@ -1,6 +1,6 @@
 import './global.css';
-import { FullPage } from '@coba/components';
+import { NeumaticosContainer } from '@coba/components';
 
 export default function Index() {
-  return <FullPage />;
+  return <NeumaticosContainer />;
 }

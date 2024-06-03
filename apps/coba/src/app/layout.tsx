@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-sync-scripts */
+import { Header } from '@coba/components';
 import './global.css';
 
 export const metadata = {
@@ -12,7 +14,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <title>Coba</title>
+      </head>
+      <body>
+        <Header />
+        <div>{children}</div>
+      </body>
     </html>
   );
 }

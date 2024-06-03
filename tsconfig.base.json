@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@coba/components": ["libs/components/src/index.ts"]
+      "@coba/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@coba/components": ["libs/components/src/index.ts"],
+      "@coba/database": ["libs/database/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
