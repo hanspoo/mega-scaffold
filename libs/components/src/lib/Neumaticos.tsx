@@ -76,7 +76,7 @@ export function Neumaticos({ neumaticos }: NeumaticosProps) {
           disabled={!aro}
         />
       </div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4  pt-5">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3  pt-5">
         {filtrados?.map((n) => (
           <NeumaticoDetail neumatico={n} />
         ))}

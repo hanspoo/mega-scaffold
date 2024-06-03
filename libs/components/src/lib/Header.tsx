@@ -7,10 +7,15 @@ export function Header() {
     <div className="mb-8">
       <div className="bg-gradient-to-r from-white to-blue-800  h-14 flex items-center text-slate-800 p-2 px-4 justify-between">
         <div className="flex items-center">
-          <Image className="mr-1" src={flags} alt="Flags" width={64} />{' '}
-          <em>
-            <b>Automotriz COBA</b>
-          </em>
+          <Image
+            className="mr-1 object-cover"
+            src={flags}
+            alt="Flags"
+            width={64}
+          />
+          <div className="text-xl">
+            <em>Automotriz COBA</em>
+          </div>
         </div>
         <span className="text-sm text-white">+56 9 9427-51-15</span>
       </div>

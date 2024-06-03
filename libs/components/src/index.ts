@@ -1,3 +1,5 @@
+export { Footer } from './lib/Footer';
+
 export { Header } from './lib/Header';
 
 export { Neumaticos } from './lib/Neumaticos';
