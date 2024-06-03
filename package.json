@@ -2,7 +2,11 @@
   "name": "@coba/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "nx dev coba",
+    "build": "nx build coba",
+    "start": "nx start coba"
+  },
   "private": true,
   "dependencies": {
     "next": "14.2.3",
