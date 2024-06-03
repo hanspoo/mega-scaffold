@@ -16,7 +16,7 @@ export function NeumaticoDetail({ neumatico }: NeumaticoDetailProps) {
   // }, []);
 
   return (
-    <div className="border-2 border-slate-400 p-10 flex items-center justify-center flex-col ">
+    <div className="border-2 border-slate-400 p-10 flex items-center justify-center flex-col  ">
       <div className="flex flex-row">
         <Image
           src={defaultImage}
