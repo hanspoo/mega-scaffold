@@ -5,7 +5,7 @@ import { Marquee } from './Marquee';
 export function Header() {
   return (
     <div className="mb-8">
-      <div className="bg-gradient-to-r from-white to-blue-800  h-14 flex items-center text-slate-800 p-2 px-4 justify-between">
+      <div className="bg-gradient-to-r from-white to-[#293053]  h-14 flex items-center text-slate-800 p-2 px-4 justify-between">
         <div className="flex items-center">
           <Image
             className="mr-1 object-cover"
