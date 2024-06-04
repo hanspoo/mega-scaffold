@@ -48,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" data-theme="aqua">
+    <html lang="es" data-theme="night">
       <head>
         <title>Coba</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
