@@ -11,6 +11,7 @@ export function Neumaticos({ neumaticos }: NeumaticosProps) {
   const [medida, setMedida] = React.useState<string>();
   const [filtrados, setFiltrados] = useState<Neumatico[]>();
   const [medidasAro, setMedidasAro] = React.useState<string[]>();
+  const [buscando, setBuscando] = useState(false);
 
   const aros = React.useMemo(
     () =>
@@ -29,6 +30,8 @@ export function Neumaticos({ neumaticos }: NeumaticosProps) {
     }));
 
   const onSelectAros = (value: string | number) => {
+    setBuscando(true);
+    setTimeout(() => setBuscando(false), 2000);
     const s = value as string;
     setAro(s);
 
@@ -61,6 +64,9 @@ export function Neumaticos({ neumaticos }: NeumaticosProps) {
     const filt = filtrarAro(neumaticos, aro || '');
     setFiltrados(filt?.filter((n) => re.test(n.medida)));
   };
+
+  const lista = aro && medida ? filtrados : neumaticos;
+
   return (
     <div className="p-2">
       <h3 className="text-2xl mb-2">Encuentra tu neumático:</h3>
@@ -76,11 +82,17 @@ export function Neumaticos({ neumaticos }: NeumaticosProps) {
           disabled={!aro}
         />
       </div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3  pt-5">
-        {filtrados?.map((n) => (
-          <NeumaticoDetail neumatico={n} />
-        ))}
-      </div>
+
+      <div className="pt-5"> </div>
+      {buscando ? (
+        <p className="text-yellow-500">Espere un momento...</p>
+      ) : (
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 ">
+          {lista?.map((n) => (
+            <NeumaticoDetail neumatico={n} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

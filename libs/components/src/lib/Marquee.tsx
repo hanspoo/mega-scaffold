@@ -1,3 +1,3 @@
 export function Marquee() {
-  return <img src="/images/verde.jpg" className="w-full" />;
+  return <img src="/images/race4.jpg" className="w-full" />;
 }
