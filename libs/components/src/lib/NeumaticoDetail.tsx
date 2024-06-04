@@ -32,7 +32,7 @@ export function NeumaticoDetail({ neumatico }: NeumaticoDetailProps) {
               <div>Medida: {neumatico.medida}</div>
             </div>
           </div>
-          <button className="bg-orange-600 text-white p-2 px-6 rounded-md hover:bg-orange-500">
+          <button className="bg-[#dc4f33] text-white p-2 px-6 rounded-md hover:bg-[#ef9362]">
             Seleccionar
           </button>
         </div>
