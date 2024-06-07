@@ -21,7 +21,7 @@ export function NeumaticoDetail({ neumatico }: NeumaticoDetailProps) {
       id: neumatico.id,
       name: `${neumatico.marca} ${neumatico.aro} ${neumatico.medida}`,
       quantity: 1,
-      value: neumatico.value,
+      value: neumatico.valor,
     };
     dispatch(addToCart(ci));
   };

@@ -24,13 +24,17 @@ export const cartSlice = createSlice({
       state.cart!.items.push(action.payload);
       return state;
     },
+    emptyCart: (state) => {
+      state.cart!.items = [];
+      return state;
+    },
   },
   // You can define your selectors here. These selectors receive the slice
   // state as their first argument.
 });
 
 // Action creators are generated for each case reducer function.
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, emptyCart } = cartSlice.actions;
 
 // Selectors returned by `slice.selectors` take the root state as their first argument.
 

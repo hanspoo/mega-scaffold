@@ -1,6 +1,5 @@
-import { store } from '@coba/redux-store';
 import './global.css';
-import { Provider } from 'react-redux';
+
 import { MainLayout } from './MainLayout';
 
 export const metadata = {

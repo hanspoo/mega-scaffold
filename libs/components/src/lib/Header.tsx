@@ -4,6 +4,7 @@ import { UserCircleIcon } from '@heroicons/react/24/solid';
 import flags from './flags.svg';
 import { Marquee } from './Marquee';
 import { ShoppingCart } from './cart/ShoppingCart';
+import { useState } from 'react';
 
 export function Header() {
   return (
