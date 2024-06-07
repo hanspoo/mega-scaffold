@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Neumatico } from '@coba/api-interfaces';
 import { Neumaticos } from './Neumaticos';
+import { store } from '@coba/redux-store';
+import { Provider } from 'react-redux';
 
 /* eslint-disable-next-line */
 export interface NeumaticosContainerProps {}
@@ -31,5 +33,9 @@ export function NeumaticosContainer(props: NeumaticosContainerProps) {
 
   if (!data) return <p>Error interno</p>;
 
-  return <Neumaticos neumaticos={data} />;
+  return (
+    <Provider store={store}>
+      <Neumaticos neumaticos={data} />
+    </Provider>
+  );
 }

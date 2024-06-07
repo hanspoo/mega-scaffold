@@ -17,7 +17,8 @@
     "paths": {
       "@coba/api-interfaces": ["libs/api-interfaces/src/index.ts"],
       "@coba/components": ["libs/components/src/index.ts"],
-      "@coba/database": ["libs/database/src/index.ts"]
+      "@coba/database": ["libs/database/src/index.ts"],
+      "@coba/redux-store": ["libs/redux-store/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

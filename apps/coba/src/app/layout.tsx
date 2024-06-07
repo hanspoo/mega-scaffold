@@ -1,6 +1,7 @@
-/* eslint-disable @next/next/no-sync-scripts */
+import { store } from '@coba/redux-store';
 import { Footer, Header } from '@coba/components';
 import './global.css';
+import { Provider } from 'react-redux';
 
 export const metadata = {
   title: 'Welcome to coba',
