@@ -1,19 +1,30 @@
 'use client';
-import { Neumatico } from '@coba/api-interfaces';
+import { CartItem, Neumatico } from '@coba/api-interfaces';
 import Image from 'next/image';
 import defaultImage from './good-year.png';
-import React from 'react';
+import { addToCart } from '@coba/redux-store';
+import { useDispatch } from 'react-redux';
 
 type NeumaticoDetailProps = {
   neumatico: Neumatico;
 };
 
 export function NeumaticoDetail({ neumatico }: NeumaticoDetailProps) {
-  const [fade, setFade] = React.useState(false);
+  const dispatch = useDispatch();
 
   // React.useEffect(() => {
   //   setTimeout(() => setFade(true), 1000);
   // }, []);
+
+  const addProduct = () => {
+    const ci: CartItem = {
+      id: neumatico.id,
+      name: `${neumatico.marca} ${neumatico.aro} ${neumatico.medida}`,
+      quantity: 1,
+      value: neumatico.value,
+    };
+    dispatch(addToCart(ci));
+  };
 
   return (
     <div className="border-2 border-slate-400 p-10 flex items-center justify-center flex-col  ">
@@ -32,7 +43,8 @@ export function NeumaticoDetail({ neumatico }: NeumaticoDetailProps) {
               <div>Medida: {neumatico.medida}</div>
             </div>
           </div>
-          <button className="bg-[#dc4f33] text-white p-2 px-6 rounded-md hover:bg-[#ef9362]">
+
+          <button onClick={addProduct} className="btn btn-primary">
             Seleccionar
           </button>
         </div>

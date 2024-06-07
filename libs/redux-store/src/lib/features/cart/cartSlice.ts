@@ -15,14 +15,14 @@ const initialState: CounterSliceState = {
 
 // If you are not using async thunks you can use the standalone `createSlice`.
 export const cartSlice = createSlice({
-  name: 'cart',
+  name: 'cartSlice',
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
-    addItem: (state, action: PayloadAction<CartItem>) => {
-      const items = state.cart?.items.concat(action.payload);
-      return { ...state, items };
+    addToCart: (state, action: PayloadAction<CartItem>) => {
+      state.cart!.items.push(action.payload);
+      return state;
     },
   },
   // You can define your selectors here. These selectors receive the slice
@@ -30,7 +30,7 @@ export const cartSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function.
-export const { addItem } = cartSlice.actions;
+export const { addToCart } = cartSlice.actions;
 
 // Selectors returned by `slice.selectors` take the root state as their first argument.
 

@@ -1,7 +1,9 @@
+'use client';
 import Image from 'next/image';
-import { ShoppingCartIcon, UserCircleIcon } from '@heroicons/react/24/solid';
+import { UserCircleIcon } from '@heroicons/react/24/solid';
 import flags from './flags.svg';
 import { Marquee } from './Marquee';
+import { ShoppingCart } from './cart/ShoppingCart';
 
 export function Header() {
   return (
@@ -18,9 +20,8 @@ export function Header() {
             <a href="/">Automotriz COBA</a>
           </div>
         </div>
-
         <div className="flex items-center">
-          <ShoppingCartIcon className="w-6 text-white mr-2" />
+          <ShoppingCart />
           <UserCircleIcon className="w-6 text-white" />
         </div>
       </div>

@@ -1,3 +1,5 @@
+export { StoreProvider } from './lib/StoreProvider';
+
 export { Footer } from './lib/Footer';
 
 export { Header } from './lib/Header';
