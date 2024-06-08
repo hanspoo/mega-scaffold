@@ -12,7 +12,8 @@ export function CartComponent({ cerrar, cart }: CartComponentProps) {
   const dispatch = useDispatch();
 
   const vaciar = () => {
-    dispatch(removeItem('') as any);
+    if (window.confirm('This will empty the cart'))
+      dispatch(removeItem('') as any);
   };
 
   const total = cart!.items.reduce((acc, iter) => {
@@ -23,7 +24,7 @@ export function CartComponent({ cerrar, cart }: CartComponentProps) {
     <div className="bg-sky-100 cursor-default text-black border-2 shadow-lg z-[1000] p-4 min-h-80 min-w-96 absolute top-8 -right-10 rounded-sm">
       <h2 className="text-2xl mb-2">Shopping Cart</h2>
       {cart!.items.length === 0 && <p>No hay productos</p>}
-      {cart && (
+      {cart?.items.length > 0 && (
         <table className="mb-20">
           <thead></thead>
           <tr>
@@ -70,7 +71,7 @@ const currencyFormatter = new Intl.NumberFormat('es-CL', {
 function CartItemList({ item, i }: { item: CartItem; i: number }) {
   const dispatch = useDispatch();
   function removeProduct() {
-    if (window.confirm('Remove the product?')) {
+    if (window.confirm(`Confirm removal of ${item.name}?`)) {
       dispatch(removeItem(item.id) as any);
     }
   }

@@ -4,8 +4,8 @@ import { UserCircleIcon } from '@heroicons/react/24/solid';
 import flags from './flags.svg';
 import { Marquee } from './Marquee';
 import { ShoppingCartAccess } from './cart/ShoppingCartAccess';
-import { useEffect, useState } from 'react';
-import { ShoppingCartContainer } from './cart/ShoppingCartContainer';
+import { useEffect } from 'react';
+
 import { fetchShoppingCart } from '@coba/redux-store';
 import { useDispatch } from 'react-redux';
 
@@ -30,7 +30,7 @@ export function Header() {
           </div>
         </div>
         <div className="flex items-center">
-          <ShoppingCartContainer  />
+          <ShoppingCartAccess />
           <UserCircleIcon className="w-6 text-white" />
         </div>
       </div>
