@@ -1,5 +1,5 @@
 import { Cart, CartItem } from '@coba/api-interfaces';
-import { emptyCart } from '@coba/redux-store';
+import { clearCart } from '@coba/redux-store';
 import { useDispatch } from 'react-redux';
 
 type CartComponentProps = {
@@ -11,7 +11,7 @@ export function CartComponent({ cerrar, cart }: CartComponentProps) {
   const dispatch = useDispatch();
 
   const vaciar = () => {
-    dispatch(emptyCart());
+    dispatch(clearCart() as any);
   };
   return (
     <div className="bg-sky-100 text-black border-2 shadow-lg z-[1000] p-4 min-h-80 min-w-80 absolute top-8 -right-10 rounded-sm">

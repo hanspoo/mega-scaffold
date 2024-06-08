@@ -25,8 +25,12 @@ export async function POST(request: Request) {
   return NextResponse.json(cart, { status: 200 });
 }
 
+export async function DELETE(request: Request) {
+  const cart = await newCart();
+  return NextResponse.json(cart, { status: 200 });
+}
+
 async function newCart(): Promise<Cart> {
-  console.log('creando cart');
   const cart = {
     createdAt: new Date().getTime(),
     items: [],
