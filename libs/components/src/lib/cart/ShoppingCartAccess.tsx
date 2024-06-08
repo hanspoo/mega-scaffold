@@ -3,7 +3,6 @@
 import { ShoppingCartIcon } from '@heroicons/react/24/solid';
 import { useState } from 'react';
 import { Cart } from '@coba/api-interfaces';
-import { ShoppingCartContainer } from './ShoppingCartContainer';
 import { CartComponent } from './CartComponent';
 
 type ShoppingCartProps = {

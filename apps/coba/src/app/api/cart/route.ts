@@ -1,6 +1,7 @@
 import { Cart, CartItem } from '@coba/api-interfaces';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { session } from '../../../lib/session'; //We import it from the initialisation file we created earlier
+import { NextApiRequest } from 'next';
 
 export async function GET(request: Request) {
   let cart: Cart = (await session().get('cart')) as any;
@@ -25,8 +26,27 @@ export async function POST(request: Request) {
   return NextResponse.json(cart, { status: 200 });
 }
 
-export async function DELETE(request: Request) {
-  const cart = await newCart();
+type ParamsType = {
+  params: {
+    id: string;
+  };
+};
+
+export async function DELETE(request: NextRequest) {
+  let cart: Cart;
+
+  const id = request.nextUrl.searchParams.get('id');
+  console.log({ id });
+  if (!id || id === 'all') {
+    cart = await newCart();
+  } else {
+    cart = (await session().get('cart')) as any;
+    if (!cart) {
+      cart = await newCart();
+    }
+    cart.items = cart.items.filter((item) => item.id !== id);
+  }
+  await session().set('cart', cart);
   return NextResponse.json(cart, { status: 200 });
 }
 

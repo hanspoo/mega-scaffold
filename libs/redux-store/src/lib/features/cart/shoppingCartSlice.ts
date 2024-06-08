@@ -10,8 +10,8 @@ export const addToCart = createAsyncThunk('api/add-item', (item: CartItem) => {
   return axios.post('/api/cart', item).then((r) => r.data);
 });
 
-export const clearCart = createAsyncThunk('api/clear-cart', () => {
-  return axios.delete('/api/cart').then((r) => r.data);
+export const removeItem = createAsyncThunk('api/delete-item', (id: string) => {
+  return axios.delete(`/api/cart?id=${id || 'all'}`).then((r) => r.data);
 });
 
 export type RestStatus = 'idle' | 'pending' | 'fulfilled' | 'rejected';
@@ -59,14 +59,14 @@ export const shoppingCartSlice = createSlice({
       .addCase(addToCart.rejected, (state, action) => {
         state.status = 'rejected';
       })
-      .addCase(clearCart.pending, (state) => {
+      .addCase(removeItem.pending, (state) => {
         state.status = 'pending';
       })
-      .addCase(clearCart.fulfilled, (state, action: PayloadAction<Cart>) => {
+      .addCase(removeItem.fulfilled, (state, action: PayloadAction<Cart>) => {
         state.status = 'fulfilled';
         state.cart = action.payload;
       })
-      .addCase(clearCart.rejected, (state, action) => {
+      .addCase(removeItem.rejected, (state, action) => {
         state.status = 'rejected';
       });
   },
