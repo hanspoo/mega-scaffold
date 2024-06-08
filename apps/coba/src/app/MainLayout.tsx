@@ -1,7 +1,10 @@
 'use client';
 import { Footer, Header, StoreProvider } from '@coba/components';
+import { fetchShoppingCart } from '@coba/redux-store';
 
-import { Provider } from 'react-redux';
+import { useEffect } from 'react';
+
+import { Provider, useDispatch } from 'react-redux';
 
 export function MainLayout({ children }: React.PropsWithChildren) {
   return (

@@ -23,7 +23,7 @@ export function NeumaticoDetail({ neumatico }: NeumaticoDetailProps) {
       quantity: 1,
       value: neumatico.valor,
     };
-    dispatch(addToCart(ci));
+    dispatch(addToCart(ci) as any);
   };
 
   return (

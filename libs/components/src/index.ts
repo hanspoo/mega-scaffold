@@ -1,3 +1,5 @@
+export { Spinner } from './lib/utils/Spinner';
+
 export { StoreProvider } from './lib/StoreProvider';
 
 export { Footer } from './lib/Footer';

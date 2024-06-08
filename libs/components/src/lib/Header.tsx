@@ -3,10 +3,18 @@ import Image from 'next/image';
 import { UserCircleIcon } from '@heroicons/react/24/solid';
 import flags from './flags.svg';
 import { Marquee } from './Marquee';
-import { ShoppingCart } from './cart/ShoppingCart';
-import { useState } from 'react';
+import { ShoppingCartAccess } from './cart/ShoppingCartAccess';
+import { useEffect, useState } from 'react';
+import { ShoppingCartContainer } from './cart/ShoppingCartContainer';
+import { fetchShoppingCart } from '@coba/redux-store';
+import { useDispatch } from 'react-redux';
 
 export function Header() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchShoppingCart() as any);
+  }, []);
+
   return (
     <div className="mb-8">
       <div className="bg-gradient-to-r from-amber-500 to-[#cc5538]  h-14 flex items-center text-white p-2 px-4 justify-between">
@@ -22,7 +30,7 @@ export function Header() {
           </div>
         </div>
         <div className="flex items-center">
-          <ShoppingCart />
+          <ShoppingCartContainer  />
           <UserCircleIcon className="w-6 text-white" />
         </div>
       </div>

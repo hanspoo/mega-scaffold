@@ -1,9 +1,13 @@
-import { CartItem } from '@coba/api-interfaces';
-import { emptyCart, RootState } from '@coba/redux-store';
-import { useDispatch, useSelector } from 'react-redux';
+import { Cart, CartItem } from '@coba/api-interfaces';
+import { emptyCart } from '@coba/redux-store';
+import { useDispatch } from 'react-redux';
 
-export function CartComponent({ cerrar }: { cerrar: () => void }) {
-  const { cart } = useSelector((state: RootState) => state.cartSlice);
+type CartComponentProps = {
+  cerrar: () => void;
+  cart: Cart;
+};
+
+export function CartComponent({ cerrar, cart }: CartComponentProps) {
   const dispatch = useDispatch();
 
   const vaciar = () => {
@@ -15,9 +19,11 @@ export function CartComponent({ cerrar }: { cerrar: () => void }) {
       {cart!.items.length === 0 && <p>No hay productos</p>}
       {cart && (
         <table className="mb-20">
-          {cart.items.map((item) => (
-            <CartItemList item={item} />
-          ))}
+          <tbody>
+            {cart.items.map((item, i) => (
+              <CartItemList item={item} key={i} />
+            ))}
+          </tbody>
         </table>
       )}
       <div className="mt-6 absolute bottom-4">

@@ -1,9 +1,10 @@
 import { combineSlices, configureStore } from '@reduxjs/toolkit';
-import { cartSlice } from '../features/cart/cartSlice';
+
+import { shoppingCartSlice } from '../features/cart/shoppingCartSlice';
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
-const rootReducer = combineSlices(cartSlice);
+const rootReducer = combineSlices(shoppingCartSlice);
 // ...
 
 export const makeStore = () => {
