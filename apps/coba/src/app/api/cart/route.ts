@@ -1,17 +1,36 @@
 import { Cart, CartItem } from '@coba/api-interfaces';
 import { NextResponse } from 'next/server';
-
-const cart: Cart = {
-  createdAt: 0,
-  items: [],
-};
+import { session } from '../../../lib/session'; //We import it from the initialisation file we created earlier
 
 export async function GET(request: Request) {
+  let cart: Cart = (await session().get('cart')) as any;
+  if (!cart) {
+    cart = await newCart();
+  }
+
   return NextResponse.json(cart, { status: 200 });
 }
 
 export async function POST(request: Request) {
   const item: CartItem = (await request.json()) as any;
+
+  let cart: Cart = (await session().get('cart')) as any;
+  if (!cart) {
+    cart = await newCart();
+  }
+
   cart.items = cart.items.concat(item);
+  await session().set('cart', cart);
+
   return NextResponse.json(cart, { status: 200 });
+}
+
+async function newCart(): Promise<Cart> {
+  console.log('creando cart');
+  const cart = {
+    createdAt: new Date().getTime(),
+    items: [],
+  };
+  await session().set('cart', cart);
+  return cart;
 }
