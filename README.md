@@ -10,7 +10,6 @@ An ecommerce from scratch with a modern tech stack:
 - typescript
 
 Until know we have a working anonymous shopping cart persisted using redux and redis.
-
 The plan is to make a multi tenancy ecommerce.
 
 ```
@@ -18,20 +17,20 @@ git clone https://github.com/hanspoo/freecommerce
 cd freecommerce
 ```
 
-Levantar redis
+Start redis with docker:
 
 ```
 cd docker/
 docker compose -f redis.yml up
 ```
 
-En otro terminal ejecutar app
+Booot up dev env in another terminal:
 
 ```
 npm install
 npm run dev
 ```
 
-Ir al navegador:
+Test in the browser:
 
 http://localhost:3000
