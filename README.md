@@ -1,6 +1,6 @@
 # Freecommerce
 
-An ecommerce from scratch site with modern tech stack:
+An ecommerce from scratch with a modern tech stack:
 
 - nx
 - react
@@ -8,6 +8,10 @@ An ecommerce from scratch site with modern tech stack:
 - tailwind
 - daisyui
 - typescript
+
+Until know we have a working anonymous shopping cart with persistence using redux and redis.
+
+The plan is to make a multi tenancy ecommerce.
 
 ```
 git clone https://github.com/hanspoo/freecommerce
