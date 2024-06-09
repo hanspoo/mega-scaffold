@@ -23,9 +23,14 @@ export function CartComponent({ cerrar, cart }: CartComponentProps) {
     dispatch(removeItem('') as any);
   };
 
-  const total = cart!.items.reduce((acc, iter) => {
-    return acc + iter.value;
-  }, 0);
+  const [cantidadTotal, valorTotal] = cart!.items.reduce(
+    (acc, item) => {
+      acc[0] = acc[0] + item.quantity;
+      acc[1] = acc[1] + item.value * item.quantity;
+      return acc;
+    },
+    [0, 0]
+  );
 
   return (
     <div className="bg-sky-100 cursor-default text-black border-2 shadow-lg z-[1000] p-4 min-h-80 min-w-96 absolute top-8 -right-10 rounded-sm">
@@ -60,9 +65,11 @@ export function CartComponent({ cerrar, cart }: CartComponentProps) {
           <tfoot>
             <tr>
               <td className="p-1">Total</td>
-              <td className="p-1 text-right"></td>
               <td className="p-1 text-right">
-                {currencyFormatter.format(total)}
+                {numberFormatter.format(cantidadTotal)}
+              </td>
+              <td className="p-1 text-right">
+                {currencyFormatter.format(valorTotal)}
               </td>
               <td className="p-1"></td>
             </tr>
@@ -78,6 +85,9 @@ export function CartComponent({ cerrar, cart }: CartComponentProps) {
         <button className="btn" onClick={cerrar}>
           Cerrar
         </button>
+        <button className="ml-6 btn btn-secondary" onClick={cerrar}>
+          Solicitar Presupuesto
+        </button>
       </div>
     </div>
   );
@@ -86,3 +96,5 @@ export const currencyFormatter = new Intl.NumberFormat('es-CL', {
   style: 'currency',
   currency: 'CLP',
 });
+
+export const numberFormatter = new Intl.NumberFormat('es-CL');

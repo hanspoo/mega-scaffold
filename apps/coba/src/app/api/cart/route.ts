@@ -19,7 +19,13 @@ export async function POST(request: Request) {
     cart = await newCart();
   }
 
-  cart.items = cart.items.concat(item);
+  const index = cart.items.findIndex((it) => it.id === item.id);
+  if (index >= 0) {
+    const it = cart.items[index];
+    cart.items[index] = { ...it, quantity: it.quantity + 1 };
+  } else {
+    cart.items = cart.items.concat(item);
+  }
   await session().set('cart', cart);
 
   return NextResponse.json(cart, { status: 200 });

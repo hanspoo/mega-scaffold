@@ -37,7 +37,7 @@ export function CartItemList({ item, i }: { item: CartItem; i: number }) {
         <td className="w-[70%] p-1">{item.name}</td>
         <td className="w-[10%] p-1 text-right">{item.quantity}</td>
         <td className="w-[20%] p-1 text-right">
-          {currencyFormatter.format(item.value)}
+          {currencyFormatter.format(item.value * item.quantity)}
         </td>
         <td className="p-1">
           <TrashIcon className="w-[16px] cursor-pointer" onClick={handleShow} />
