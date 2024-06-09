@@ -1,7 +1,6 @@
 import { Cart, CartItem } from '@coba/api-interfaces';
 import { NextRequest, NextResponse } from 'next/server';
 import { session } from '../../../lib/session'; //We import it from the initialisation file we created earlier
-import { NextApiRequest } from 'next';
 
 export async function GET(request: Request) {
   let cart: Cart = (await session().get('cart')) as any;
