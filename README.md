@@ -9,7 +9,7 @@ An ecommerce from scratch with a modern tech stack:
 - daisyui
 - typescript
 
-Until know we have a working anonymous shopping cart with persistence using redux and redis.
+Until know we have a working anonymous shopping cart persisted using redux and redis.
 
 The plan is to make a multi tenancy ecommerce.
 
