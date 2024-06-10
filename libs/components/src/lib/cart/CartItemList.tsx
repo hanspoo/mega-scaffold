@@ -17,7 +17,7 @@ export function CartItemList({ item, i }: { item: CartItem; i: number }) {
   function removeProduct() {
     dispatch(removeItem(item.id) as any);
   }
-  const bg = i % 2 === 0 ? 'bg-white' : '';
+  const bg = i % 2 === 0 ? 'bg-primary' : '';
 
   return (
     <>
