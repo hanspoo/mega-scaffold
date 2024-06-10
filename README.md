@@ -34,3 +34,14 @@ npm run dev
 Test in the browser:
 
 http://localhost:3000
+
+## PostgreSQL
+
+Se requiere una base de datos postgresql, las sigueintes son las variables de entorno que deben ir en .env.local;
+
+```
+PG_PASS=123456
+PG_USER=myuser
+PG_HOST=localhost
+PG_DATABASE=mydatabase
+```
