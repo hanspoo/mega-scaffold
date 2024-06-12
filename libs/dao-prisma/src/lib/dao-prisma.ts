@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 export async function daoPrisma() {
-  const user = await prisma.user.create({
+  const user = await prisma.pedido.create({
     data: {
       name: 'Alice',
       email: 'alice@prisma.io',

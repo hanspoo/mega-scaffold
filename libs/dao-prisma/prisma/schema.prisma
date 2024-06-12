@@ -16,12 +16,12 @@ datasource db {
 model Pedido {
   id         String   @id @default(uuid())
   email      String   @unique
-  name       String?
+  name       String
   createdAt  DateTime @default(now()) @db.Timestamptz(6)
   modifiedAt DateTime @default(now()) @db.Timestamptz(6)
   estado     String
 
-  coments String
+  coments String?
   phone   String
 
   items Item[]
