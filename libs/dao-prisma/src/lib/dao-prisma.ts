@@ -1,14 +1,30 @@
 import { PrismaClient } from '@prisma/client';
+
+const db = process.env['NODE_ENV'] || 'dev';
+
+let DB_URL = process.env['DATABASE_URL'];
+
+if (!DB_URL) {
+  DB_URL = `postgresql://julian:hp8270@localhost:5432/coba-${db}`;
+  process.env['DATABASE_URL'] = DB_URL;
+}
+
+console.log(DB_URL);
+
 const prisma = new PrismaClient();
 
 export async function daoPrisma() {
-  const user = await prisma.pedido.create({
+  await prisma.pedido.deleteMany();
+  const pedido = await prisma.pedido.create({
     data: {
       name: 'Alice',
       email: 'alice@prisma.io',
+      estado: 'abc',
+      coments: 'abc',
+      phone: '123',
     },
   });
-  console.log(user);
+  return pedido;
 }
 
 daoPrisma()
