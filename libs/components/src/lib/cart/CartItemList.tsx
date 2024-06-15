@@ -3,9 +3,10 @@ import { CartItem } from '@coba/api-interfaces';
 import { removeItem } from '@coba/redux-store';
 import { TrashIcon } from '@heroicons/react/24/solid';
 import { useDispatch } from 'react-redux';
-import { currencyFormatter } from './CartComponent';
+
 import { useRef, useCallback } from 'react';
 import { Modal, Button } from 'react-daisyui';
+import { currencyFormatter } from '../utils/Formatters';
 
 export function CartItemList({ item, i }: { item: CartItem; i: number }) {
   const ref = useRef<HTMLDialogElement>(null);
@@ -17,7 +18,7 @@ export function CartItemList({ item, i }: { item: CartItem; i: number }) {
   function removeProduct() {
     dispatch(removeItem(item.id) as any);
   }
-  const bg = i % 2 === 0 ? 'bg-primary' : '';
+  const bg = i % 2 === 0 ? 'bg-secondary' : '';
 
   return (
     <>

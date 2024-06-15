@@ -8,15 +8,16 @@ type ProcesandoPedidoProps = {
   cart: Cart;
   contact: ContactInfo;
   onSuccess: () => void;
+  onError: (s: string) => void;
 };
 
 export function ProcesandoPedido({
   cart,
   contact,
   onSuccess,
+  onError,
 }: ProcesandoPedidoProps) {
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
 
   useEffect(() => {
     setLoading(true);
@@ -27,7 +28,7 @@ export function ProcesandoPedido({
         onSuccess();
       })
       .catch((error) => {
-        setError(error.message);
+        onError(error.message);
         setLoading(false);
       });
   }, []);
@@ -38,7 +39,6 @@ export function ProcesandoPedido({
         <Spinner />
       </div>
     );
-  if (error) return <div className="text-error mb-4">{error}</div>;
 
   return null;
 }

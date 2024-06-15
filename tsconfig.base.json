@@ -16,6 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@/components": ["libs/desde-algolia/src/lib"],
       "@coba/api-interfaces": ["libs/api-interfaces/src/index.ts"],
       "@coba/components": ["libs/components/src/index.ts"],
       "@coba/dao-prisma": ["libs/dao-prisma/src/index.ts"],

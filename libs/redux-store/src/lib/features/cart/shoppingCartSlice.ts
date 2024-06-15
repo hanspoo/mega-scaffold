@@ -20,19 +20,25 @@ type StateType = {
   status: RestStatus;
   cart?: Cart;
   error: string;
+  theme: string;
 };
 
 const INITIAL: StateType = {
   status: 'idle',
   cart: undefined,
   error: '',
+  theme: 'business',
 };
 
 //Reducer
 export const shoppingCartSlice = createSlice({
   name: 'shoppingCart',
   initialState: INITIAL,
-  reducers: {},
+  reducers: {
+    setTheme: (state, action: PayloadAction<string>) => {
+      return { ...state, theme: action.payload };
+    },
+  },
   extraReducers: (builder) => {
     builder
       //fetchShoppingCart
@@ -71,5 +77,7 @@ export const shoppingCartSlice = createSlice({
       });
   },
 });
+
+export const { setTheme } = shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;

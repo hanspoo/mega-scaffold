@@ -1,30 +1,29 @@
-import classNames from 'classnames'
-import type { ImageProps } from 'next/image'
-import Image from 'next/image'
-import { useCallback, useState } from 'react'
+import classNames from 'classnames';
+import type { ImageProps } from 'next/image';
+import Image from 'next/image';
+import { useCallback, useState } from 'react';
+import { useIsMounted } from '../../hooks/useIsMounted';
+import { Container } from '../container/container';
+import { DummyWrapper } from '../dummy-wrapper/dummy-wrapper';
 
-import { Container } from '@/components/container/container'
-import { DummyWrapper } from '@/components/dummy-wrapper/dummy-wrapper'
-import { useIsMounted } from '@/hooks/useIsMounted'
-
-export type BannerSize = 'l' | 'm' | 's' | 'xl' | 'xs-large' | 'xs-small'
+export type BannerSize = 'l' | 'm' | 's' | 'xl' | 'xs-large' | 'xs-small';
 
 export type BannerProps = {
-  size: BannerSize
-  title?: string
-  subtitle?: string
-  description?: string
-  image?: ImageProps['src']
-  imageAlt?: string
-  overlay?: boolean
-  gradient?: boolean
-  fullWidth?: boolean
-  className?: string
-  classNameTitle?: string
-  classNameSubtitle?: string
-  classNameDescription?: string
-  children?: React.ReactNode
-}
+  size: BannerSize;
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  image?: ImageProps['src'];
+  imageAlt?: string;
+  overlay?: boolean;
+  gradient?: boolean;
+  fullWidth?: boolean;
+  className?: string;
+  classNameTitle?: string;
+  classNameSubtitle?: string;
+  classNameDescription?: string;
+  children?: React.ReactNode;
+};
 
 export function Banner({
   size,
@@ -42,17 +41,17 @@ export function Banner({
   classNameDescription,
   children,
 }: BannerProps) {
-  const [loaded, setLoaded] = useState(false)
-  const isMounted = useIsMounted()
+  const [loaded, setLoaded] = useState(false);
+  const isMounted = useIsMounted();
 
   const handleLoadingComplete = useCallback(
     () => (isMounted() ? setLoaded(true) : null),
     [isMounted]
-  )
+  );
 
-  if (!size) return null
+  if (!size) return null;
 
-  const Wrapper = fullWidth ? DummyWrapper : Container
+  const Wrapper = fullWidth ? DummyWrapper : Container;
 
   return (
     <>
@@ -78,7 +77,7 @@ export function Banner({
         {image && (
           <Image
             src={image}
-            alt={imageAlt}
+            alt="xxx"
             layout="fill"
             objectFit="cover"
             objectPosition="center"
@@ -162,5 +161,5 @@ export function Banner({
         />
       )}
     </>
-  )
+  );
 }

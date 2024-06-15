@@ -3,13 +3,14 @@ import { Formik, Form, Field, useField } from 'formik';
 import * as Yup from 'yup';
 import { Cart, ContactInfo } from '@coba/api-interfaces';
 import { ProcesandoPedido } from './ProcesandoPedido';
-import { CheckBadgeIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
+import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import { useDispatch } from 'react-redux';
 import { removeItem } from '@coba/redux-store';
+import { Button } from 'react-daisyui';
 
 const MyTextArea = (props: any) => {
   const [field, meta] = useField(props);
-  return <textarea className="textarea" {...field} {...props} />;
+  return <textarea className="textarea " {...field} {...props} />;
 };
 
 const SignupSchema = Yup.object().shape({
@@ -34,7 +35,7 @@ export const FormPresupuesto = ({ cart }: Props) => {
   const [enviando, setEnviando] = useState(false);
   const [contact, setContact] = useState<ContactInfo>();
   const [presupuestoEnviado, setPresupuestoEnviado] = useState(false);
-  // const [error, setError] = useState('');
+  const [error, setError] = useState('');
 
   const submitForm = (values: any) => {
     setEnviando(true);
@@ -65,6 +66,10 @@ export const FormPresupuesto = ({ cart }: Props) => {
           Nuestro equipo de ventas lo contactará en algunos minutos.
         </p>
 
+        <a href="/" className="btn btn-primary mb-4 ">
+          Continuar en la tienda
+        </a>
+
         <p>
           Atte, <br />
           ZonaCoba
@@ -72,13 +77,28 @@ export const FormPresupuesto = ({ cart }: Props) => {
       </div>
     );
   }
+  if (error)
+    return (
+      <div>
+        <div className="text-error mb-4">Ha ocurrido un error: {error}</div>
+        <a className="my-2 btn btn-primary" href="/checkout">
+          Reintentar
+        </a>
+      </div>
+    );
 
   if (enviando && contact)
     return (
       <ProcesandoPedido
         cart={cart}
         contact={contact}
-        onSuccess={() => setPresupuestoEnviado(true)}
+        onError={(s: string) => {
+          setError(s);
+        }}
+        onSuccess={() => {
+          dispatch(removeItem('') as any);
+          setPresupuestoEnviado(true);
+        }}
       />
     );
 
@@ -100,7 +120,7 @@ export const FormPresupuesto = ({ cart }: Props) => {
       >
         {({ errors, touched }) => (
           <Form className="flex flex-col">
-            <div>
+            <div className="mb-6">
               Nuestro equipo de ventas te contactará de inmediato para coordinar
               el pago y el despacho de los productos.
             </div>
@@ -114,7 +134,7 @@ export const FormPresupuesto = ({ cart }: Props) => {
                   </span>
                 ) : null}
               </label>
-              <Field name="name" className="input" />
+              <Field name="name" className="input bg-secondary" />
             </div>
 
             <div className="form-control">
@@ -127,7 +147,7 @@ export const FormPresupuesto = ({ cart }: Props) => {
                   </span>
                 ) : null}
               </label>
-              <Field name="email" className="input" />
+              <Field name="email" className="input bg-secondary" />
             </div>
 
             <div className="form-control">
@@ -140,7 +160,7 @@ export const FormPresupuesto = ({ cart }: Props) => {
                   </span>
                 ) : null}
               </label>
-              <Field name="phone" className="input" />
+              <Field name="phone" className="input bg-secondary" />
             </div>
 
             <div className="form-control mb-6">
@@ -153,7 +173,11 @@ export const FormPresupuesto = ({ cart }: Props) => {
                   </span>
                 ) : null}
               </label>
-              <MyTextArea name="coments" className="textarea" rows={4} />
+              <MyTextArea
+                name="coments"
+                className="textarea bg-secondary"
+                rows={4}
+              />
             </div>
 
             <button className="btn btn-primary" type="submit">

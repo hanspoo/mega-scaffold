@@ -26,8 +26,8 @@ export function NeumaticosContainer(props: NeumaticosContainerProps) {
       });
   }, []);
 
-  if (loading) return <p>cargando...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <p className="p-4">cargando...</p>;
+  if (error) return <p className="p-4 error">{error}</p>;
 
   if (!data) return <p>Error interno</p>;
 
