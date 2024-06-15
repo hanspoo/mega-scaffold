@@ -1,1 +1,1 @@
-export * from './lib/dao-prisma';
+export { ServicioPedidosPrisma } from './lib/ServicioPedidosPrisma';

@@ -45,3 +45,13 @@ PG_USER=myuser
 PG_HOST=localhost
 PG_DATABASE=mydatabase
 ```
+
+## Prisma
+
+Refrescar el cliente y parchar la base de datos
+
+```
+nx run dao-prisma:prisma-generate
+nx run dao-prisma:prisma-push
+
+```

@@ -3,6 +3,7 @@ import { Neumatico, filtrarAro } from '@coba/api-interfaces';
 import { Dropdown, DropdownOption } from './utils/Dropdown';
 import React, { useState } from 'react';
 import { NeumaticoDetail } from './NeumaticoDetail';
+import { Marquee } from './Marquee';
 
 type NeumaticosProps = { neumaticos: Array<Neumatico> };
 
@@ -68,31 +69,32 @@ export function Neumaticos({ neumaticos }: NeumaticosProps) {
   const lista = aro && medida ? filtrados : neumaticos;
 
   return (
-    <div className="p-2">
-      <h3 className="text-2xl mb-2">Encuentra tu neumático:</h3>
-      <div className="grid grid-cols-2 gap-4">
-        <label>Aro</label>
-        <label>Medida</label>
-
-        <Dropdown options={arosOk} onSelect={onSelectAros} selected={aro} />
-        <Dropdown
-          selected={medida}
-          options={medidasAro?.map((m) => ({ label: m, value: m })) as any}
-          onSelect={onSelectMedida}
-          disabled={!aro}
-        />
-      </div>
-
-      <div className="pt-5"> </div>
-      {buscando ? (
-        <p className="text-yellow-500">Espere un momento...</p>
-      ) : (
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 ">
-          {lista?.map((n) => (
-            <NeumaticoDetail neumatico={n} key={n.id} />
-          ))}
+    <div>
+      <Marquee />
+      <div className="m-4">
+        <h3 className="text-2xl mb-2">Encuentra tu neumático:</h3>
+        <div className="grid grid-cols-2 gap-4">
+          <label>Aro</label>
+          <label>Medida</label>
+          <Dropdown options={arosOk} onSelect={onSelectAros} selected={aro} />
+          <Dropdown
+            selected={medida}
+            options={medidasAro?.map((m) => ({ label: m, value: m })) as any}
+            onSelect={onSelectMedida}
+            disabled={!aro}
+          />
         </div>
-      )}
+        <div className="pt-5"> </div>
+        {buscando ? (
+          <p className="text-yellow-500">Espere un momento...</p>
+        ) : (
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 ">
+            {lista?.map((n) => (
+              <NeumaticoDetail neumatico={n} key={n.id} />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

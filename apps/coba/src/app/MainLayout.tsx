@@ -1,10 +1,5 @@
 'use client';
 import { Footer, Header, StoreProvider } from '@coba/components';
-import { fetchShoppingCart } from '@coba/redux-store';
-
-import { useEffect } from 'react';
-
-import { Provider, useDispatch } from 'react-redux';
 
 export function MainLayout({ children }: React.PropsWithChildren) {
   return (
@@ -17,5 +12,21 @@ export function MainLayout({ children }: React.PropsWithChildren) {
         <Footer />
       </div>
     </StoreProvider>
+  );
+}
+
+type JumbotronProps = {
+  title: string;
+  content: string;
+  className: string;
+};
+function Jumbotron({ title, content, className }: JumbotronProps) {
+  return (
+    <div
+      className={`${className} my-4 p-10 text-6xl  rounded-lg shadow-lg mx-2 lg:mx-0 hover:text-white`}
+    >
+      {title}
+      <div className="my-4 text-2xl">{content}</div>
+    </div>
   );
 }

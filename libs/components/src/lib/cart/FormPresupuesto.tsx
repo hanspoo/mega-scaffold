@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Formik, Form, Field, useField } from 'formik';
 import * as Yup from 'yup';
-import { Cart } from '@coba/api-interfaces';
+import { Cart, ContactInfo } from '@coba/api-interfaces';
 import { ProcesandoPedido } from './ProcesandoPedido';
-import { ContactInfo } from '../../../../api-interfaces/src/lib/pedidos/ContactInfo';
+import { CheckBadgeIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
+import { useDispatch } from 'react-redux';
+import { removeItem } from '@coba/redux-store';
 
 const MyTextArea = (props: any) => {
   const [field, meta] = useField(props);
@@ -28,9 +30,10 @@ type Props = {
 };
 
 export const FormPresupuesto = ({ cart }: Props) => {
+  const dispatch = useDispatch();
   const [enviando, setEnviando] = useState(false);
   const [contact, setContact] = useState<ContactInfo>();
-  // const [presupuestoEnviado, setPresupuestoEnviado] = useState(false);
+  const [presupuestoEnviado, setPresupuestoEnviado] = useState(false);
   // const [error, setError] = useState('');
 
   const submitForm = (values: any) => {
@@ -48,31 +51,40 @@ export const FormPresupuesto = ({ cart }: Props) => {
     //   });
   };
 
-  if (enviando && contact)
+  if (presupuestoEnviado) {
+    // dispatch(removeItem('') as any);
     return (
-      <div>
+      <div className="mb-10">
         <h1 className="my-2 font-bold text-2xl">Solicitar Presupuesto</h1>
-        <ProcesandoPedido cart={cart} contact={contact} />
+        <p className="mb-2">
+          Estimado cliente, gracias por preferir Coba. Hemos recibido su pedido
+          y se le ha enviando un correo de confirmación.
+        </p>
+        <CheckCircleIcon className="h-16 text-white " />
+        <p className="mb-4">
+          Nuestro equipo de ventas lo contactará en algunos minutos.
+        </p>
+
+        <p>
+          Atte, <br />
+          ZonaCoba
+        </p>
       </div>
     );
+  }
 
-  const INITIAL_VALUES: ContactInfo = {
-    name: 'Juan Pérez',
-    coments: 'Enviar a domicilio',
-    phone: '+56 9 1234 5678',
-    email: 'hanspoo@gmail.com',
-  };
-
-  const vacio: ContactInfo = {
-    name: '',
-    coments: '',
-    phone: '',
-    email: '',
-  };
+  if (enviando && contact)
+    return (
+      <ProcesandoPedido
+        cart={cart}
+        contact={contact}
+        onSuccess={() => setPresupuestoEnviado(true)}
+      />
+    );
 
   return (
-    <div>
-      <h1 className="my-2 font-bold text-2xl">Solicitar Presupuesto</h1>
+    <div className="mb-10">
+      <h1 className="my-2 mb-4 font-bold text-2xl">Solicitar Presupuesto</h1>
       <Formik
         initialValues={{
           name: '',

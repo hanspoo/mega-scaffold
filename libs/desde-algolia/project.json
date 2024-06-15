@@ -1,0 +1,9 @@
+{
+  "name": "desde-algolia",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/desde-algolia/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project desde-algolia --web",
+  "targets": {}
+}

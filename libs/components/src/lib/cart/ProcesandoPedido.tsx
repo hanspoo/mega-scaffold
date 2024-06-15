@@ -1,27 +1,30 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import { Cart } from '@coba/api-interfaces';
+import { Cart, ContactInfo } from '@coba/api-interfaces';
 import { Spinner } from '../utils/Spinner';
-import { ContactInfo } from '../../../../api-interfaces/src/lib/pedidos/ContactInfo';
 
 type ProcesandoPedidoProps = {
   cart: Cart;
   contact: ContactInfo;
+  onSuccess: () => void;
 };
 
-export function ProcesandoPedido({ cart, contact }: ProcesandoPedidoProps) {
+export function ProcesandoPedido({
+  cart,
+  contact,
+  onSuccess,
+}: ProcesandoPedidoProps) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [data, setData] = useState();
 
   useEffect(() => {
     setLoading(true);
     axios
       .post(`/api/pedidos`, { cart, contact })
       .then((response) => {
-        setData(response.data);
         setLoading(false);
+        onSuccess();
       })
       .catch((error) => {
         setError(error.message);
@@ -29,10 +32,13 @@ export function ProcesandoPedido({ cart, contact }: ProcesandoPedidoProps) {
       });
   }, []);
 
-  if (loading) return <Spinner />;
-  if (error) return <p>{error}</p>;
+  if (loading)
+    return (
+      <div className="mb-4">
+        <Spinner />
+      </div>
+    );
+  if (error) return <div className="text-error mb-4">{error}</div>;
 
-  if (!data) return <p>Error interno</p>;
-
-  return <p>Bingo</p>;
+  return null;
 }

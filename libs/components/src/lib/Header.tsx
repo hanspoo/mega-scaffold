@@ -16,7 +16,7 @@ export function Header() {
   }, []);
 
   return (
-    <div className="mb-8">
+    <div>
       <div className="bg-gradient-to-r from-amber-500 to-[#cc5538]  h-14 flex items-center text-white p-2 px-4 justify-between">
         <div className="flex items-center">
           <Image
@@ -25,9 +25,9 @@ export function Header() {
             alt="Flags"
             width={64}
           />
-          <div className="text-xl">
+          <h1 className="text-xl">
             <a href="/">Automotriz COBA</a>
-          </div>
+          </h1>
         </div>
         <div className="flex items-center">
           <ShoppingCartAccess />
@@ -37,7 +37,6 @@ export function Header() {
       <div className="bg-white h-10 flex items-center p-4 text-black">
         <span className=" flex text-sm">+56 9 9427-51-15</span>
       </div>
-      <Marquee />
     </div>
   );
 }

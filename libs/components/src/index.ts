@@ -1,3 +1,5 @@
+export { SeccionCheckout } from './lib/checkout/SeccionCheckout';
+
 export { Spinner } from './lib/utils/Spinner';
 
 export { StoreProvider } from './lib/StoreProvider';

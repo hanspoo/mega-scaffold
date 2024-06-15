@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -15,28 +9,24 @@ datasource db {
 
 model Pedido {
   id         String   @id @default(uuid())
-  email      String   @unique
+  email      String
   name       String
   createdAt  DateTime @default(now()) @db.Timestamptz(6)
   modifiedAt DateTime @default(now()) @db.Timestamptz(6)
   estado     String
-
-  coments String?
-  phone   String
-
-  items Item[]
+  coments    String?
+  phone      String
+  items      Item[]
 }
 
 model Item {
-  id String @id @default(uuid())
-
-  idItem   String
-  name     String
-  quantity Int
-  value    Float
-
-  pedido     Pedido   @relation(fields: [pedidoId], references: [id])
+  id         String   @id @default(uuid())
+  idItem     String
+  name       String
+  quantity   Int
+  value      Float
   pedidoId   String
   createdAt  DateTime @default(now()) @db.Timestamptz(6)
   modifiedAt DateTime @default(now()) @db.Timestamptz(6)
+  pedido     Pedido   @relation(fields: [pedidoId], references: [id])
 }

@@ -108,12 +108,9 @@ export function CartComponent({ cerrar, cart }: CartComponentProps) {
           Cerrar
         </button>
         {cart!.items.length > 0 && (
-          <button
-            className="ml-6 btn "
-            onClick={() => setPresupuesto(!presupuesto)}
-          >
+          <a className="ml-6 btn " href="/checkout">
             Solicitar Presupuesto
-          </button>
+          </a>
         )}
       </div>
       {presupuesto && <FormPresupuesto cart={cart} />}
