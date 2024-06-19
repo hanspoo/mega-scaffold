@@ -1,0 +1,32 @@
+export const pedido = {
+  id: '39f5de5c-2f7c-4c3e-b5ab-cad924915cea',
+  email: 'hanspoo@gmail.com',
+  name: 'juan pérez',
+  createdAt: '2024-06-18T13:24:06.583Z',
+  modifiedAt: '2024-06-18T13:24:06.692Z',
+  estado: 'pendiente',
+  coments: 'Lorem ipsum dolor',
+  phone: '+56993199305',
+  items: [
+    {
+      id: '9918f764-60a3-4955-865c-8c1c81626c06',
+      idItem: '1',
+      name: 'West Lake R12 5.00 r12 cr868 83/82p',
+      quantity: 1,
+      value: 40000,
+      pedidoId: '39f5de5c-2f7c-4c3e-b5ab-cad924915cea',
+      createdAt: '2024-06-18T13:24:06.692Z',
+      modifiedAt: '2024-06-18T13:24:06.692Z',
+    },
+    {
+      id: 'c46cda6b-7434-4a78-a296-76e79eb747ef',
+      idItem: '2',
+      name: 'West Lake R13 155/65 ',
+      quantity: 1,
+      value: 40000,
+      pedidoId: '39f5de5c-2f7c-4c3e-b5ab-cad924915cea',
+      createdAt: '2024-06-18T13:24:06.692Z',
+      modifiedAt: '2024-06-18T13:24:06.692Z',
+    },
+  ],
+};

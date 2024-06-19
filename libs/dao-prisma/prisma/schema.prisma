@@ -7,26 +7,30 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Pedido {
-  id         String   @id @default(uuid())
+model DAOPedido {
+  id         String    @id @default(uuid())
   email      String
   name       String
-  createdAt  DateTime @default(now()) @db.Timestamptz(6)
-  modifiedAt DateTime @default(now()) @db.Timestamptz(6)
+  createdAt  DateTime  @default(now()) @db.Timestamptz(6)
+  modifiedAt DateTime  @default(now()) @db.Timestamptz(6)
   estado     String
   coments    String?
   phone      String
-  items      Item[]
+  items      DAOItem[]
+
+  @@map("pedido")
 }
 
-model Item {
-  id         String   @id @default(uuid())
+model DAOItem {
+  id         String    @id @default(uuid())
   idItem     String
   name       String
   quantity   Int
   value      Float
   pedidoId   String
-  createdAt  DateTime @default(now()) @db.Timestamptz(6)
-  modifiedAt DateTime @default(now()) @db.Timestamptz(6)
-  pedido     Pedido   @relation(fields: [pedidoId], references: [id])
+  createdAt  DateTime  @default(now()) @db.Timestamptz(6)
+  modifiedAt DateTime  @default(now()) @db.Timestamptz(6)
+  pedido     DAOPedido @relation(fields: [pedidoId], references: [id])
+
+  @@map("item")
 }

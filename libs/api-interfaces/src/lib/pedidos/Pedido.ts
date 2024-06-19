@@ -1,8 +1,13 @@
-export type Pedido = {
-  name: string;
+import { Item } from './Item';
+
+export interface Pedido {
+  id: string;
   email: string;
+  name: string;
+  createdAt: string;
+  modifiedAt: string;
   estado: string;
-  coments?: string;
+  coments: string;
   phone: string;
-  status: string;
-};
+  items: Item[];
+}

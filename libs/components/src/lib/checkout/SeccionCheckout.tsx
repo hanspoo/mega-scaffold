@@ -10,7 +10,6 @@ export function SeccionCheckout() {
 
   return (
     <div className="my-6 m-4">
-      <CartTable cart={cart} />
       <FormPresupuesto cart={cart} />
     </div>
   );

@@ -22,6 +22,7 @@ export function CartTable({ cart }: { cart: Cart }) {
           <th className="w-[60%] p-1">Producto</th>
           <th className="w-[10%] p-1">Cant</th>
           <th className="w-[20%] p-1">Valor</th>
+          <th className="w-[20%] p-1">Total</th>
           <th className="w-[10%] p-1">Opc</th>
         </tr>
       </thead>

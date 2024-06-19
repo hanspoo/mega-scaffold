@@ -1,3 +1,5 @@
+export { CorreoComprador } from './lib/CorreoComprador';
+
 export { SeccionCheckout } from './lib/checkout/SeccionCheckout';
 export { type WithClassName } from './lib/utils/WithClassName';
 

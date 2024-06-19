@@ -26,7 +26,7 @@ export function Dropdown({
   return (
     <>
       {/* component */}
-      <div className="flex   w-full">
+      <div className="flex w-full">
         <div className="relative group  w-full">
           <button
             disabled={disabled}

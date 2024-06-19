@@ -23,7 +23,9 @@
       "@coba/database": ["libs/database/src/index.ts"],
       "@coba/desde-algolia": ["libs/desde-algolia/src/index.ts"],
       "@coba/local-daisy": ["libs/local-daisy/src/index.ts"],
-      "@coba/redux-store": ["libs/redux-store/src/index.ts"]
+      "@coba/mail-utils": ["libs/mail-utils/src/index.ts"],
+      "@coba/redux-store": ["libs/redux-store/src/index.ts"],
+      "@coba/services": ["libs/services/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

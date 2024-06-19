@@ -70,7 +70,9 @@ export function Neumaticos({ neumaticos }: NeumaticosProps) {
 
   return (
     <div>
-      <Marquee />
+      <div className="mb-4">
+        <Marquee />
+      </div>
       <div className="m-4">
         <h3 className="text-2xl mb-2">Encuentra tu neumático:</h3>
         <div className="grid grid-cols-2 gap-4">

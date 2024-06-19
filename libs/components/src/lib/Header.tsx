@@ -26,7 +26,7 @@ export function Header() {
             width={64}
           />
           <h1 className="text-xl">
-            <a href="/">Automotriz COBA</a>
+            <a href="/">Zona COBA</a>
           </h1>
         </div>
         <div className="flex items-center">

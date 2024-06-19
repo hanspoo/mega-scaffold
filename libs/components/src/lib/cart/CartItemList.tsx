@@ -34,10 +34,13 @@ export function CartItemList({ item, i }: { item: CartItem; i: number }) {
           </form>
         </Modal.Actions>
       </Modal>
-      <tr className={`${bg}`}>
-        <td className="w-[70%] p-1">{item.name}</td>
+      <tr>
+        <td className="w-[65%] p-1">{item.name}</td>
         <td className="w-[10%] p-1 text-right">{item.quantity}</td>
-        <td className="w-[20%] p-1 text-right">
+        <td className="w-[10%] p-1 text-right">
+          {currencyFormatter.format(item.value)}
+        </td>
+        <td className="w-[10%] p-1 text-right">
           {currencyFormatter.format(item.value * item.quantity)}
         </td>
         <td className="p-1">

@@ -6,7 +6,7 @@ import { ProcesandoPedido } from './ProcesandoPedido';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import { useDispatch } from 'react-redux';
 import { removeItem } from '@coba/redux-store';
-import { Button } from 'react-daisyui';
+import { CartTable } from './CartTable';
 
 const MyTextArea = (props: any) => {
   const [field, meta] = useField(props);
@@ -58,8 +58,8 @@ export const FormPresupuesto = ({ cart }: Props) => {
       <div className="mb-10">
         <h1 className="my-2 font-bold text-2xl">Solicitar Presupuesto</h1>
         <p className="mb-2">
-          Estimado cliente, gracias por preferir Coba. Hemos recibido su pedido
-          y se le ha enviando un correo de confirmación.
+          Gracias por preferir Coba. Hemos recibido su pedido y se le ha
+          enviando un correo de confirmación.
         </p>
         <CheckCircleIcon className="h-16 text-white " />
         <p className="mb-4">
@@ -104,6 +104,8 @@ export const FormPresupuesto = ({ cart }: Props) => {
 
   return (
     <div className="mb-10">
+      <h1 className="my-2 mb-4 font-bold text-2xl">Productos seleccionados</h1>
+      <CartTable cart={cart} />
       <h1 className="my-2 mb-4 font-bold text-2xl">Solicitar Presupuesto</h1>
       <Formik
         initialValues={{
@@ -124,7 +126,7 @@ export const FormPresupuesto = ({ cart }: Props) => {
               Nuestro equipo de ventas te contactará de inmediato para coordinar
               el pago y el despacho de los productos.
             </div>
-            <div className="form-control">
+            <div className="form-control mb-2">
               <label className="label">
                 <span className="label-text">Nombre</span>
 
@@ -137,7 +139,7 @@ export const FormPresupuesto = ({ cart }: Props) => {
               <Field name="name" className="input bg-secondary" />
             </div>
 
-            <div className="form-control">
+            <div className="form-control mb-2">
               <label className="label">
                 <span className="label-text">Email</span>
 
@@ -150,7 +152,7 @@ export const FormPresupuesto = ({ cart }: Props) => {
               <Field name="email" className="input bg-secondary" />
             </div>
 
-            <div className="form-control">
+            <div className="form-control mb-2">
               <label className="label">
                 <span className="label-text">Teléfono</span>
 
@@ -163,7 +165,7 @@ export const FormPresupuesto = ({ cart }: Props) => {
               <Field name="phone" className="input bg-secondary" />
             </div>
 
-            <div className="form-control mb-6">
+            <div className="form-control mb-8">
               <label className="label">
                 <span className="label-text">Información adicional</span>
 

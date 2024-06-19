@@ -2,14 +2,13 @@ import { RootState, incrementImage } from '@coba/redux-store';
 
 import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useMediaQuery } from './hooks/useMediaQuery';
 
 const images = [
-  'marketing1.jpg',
-  'marketing2.jpg',
-  'marketing3.jpg',
-  'marketing4.jpg',
-  'marketing5.jpg',
-  'marketing6.jpg',
+  {
+    desktop: 'banner-1-desktop.png',
+    mobile: 'banner-1-mobile.png',
+  },
 ];
 
 const getRandomInteger = (min: number, max: number) => {
@@ -20,6 +19,7 @@ const getRandomInteger = (min: number, max: number) => {
 };
 
 export function Marquee() {
+  const isBreakpoint = useMediaQuery(1024);
   // const dispatch = useDispatch();
   // const { currentImage } = useSelector((state: RootState) => state.addsSlice);
 
@@ -30,13 +30,25 @@ export function Marquee() {
 
   // }, [currentImage]);
 
-  const backgroundImage = `/images/marketing/${images[index]}`;
+  const backgroundImageDesktop = `/images/marketing/${images[index].desktop}`;
+  const backgroundImageMobile = `/images/marketing/${images[index].mobile}`;
   // console.log({ index, backgroundImage });
 
   return (
-    <div
-      className={`h-[250px] md:h-[300px] lg:h-[300px] xl:h-[400px] w-full bg-cover`}
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    ></div>
+    <div>
+      {isBreakpoint ? (
+        <div
+          className={`h-[250px] md:h-[300px] lg:h-[300px] xl:h-[400px] w-full bg-cover lg:hidden`}
+          style={{
+            backgroundImage: `url(${backgroundImageMobile})`,
+          }}
+        ></div>
+      ) : (
+        <div
+          className={`h-[250px] md:h-[300px] lg:h-[300px] xl:h-[400px] w-full bg-cover hidden lg:block`}
+          style={{ backgroundImage: `url(${backgroundImageDesktop})` }}
+        ></div>
+      )}
+    </div>
   );
 }

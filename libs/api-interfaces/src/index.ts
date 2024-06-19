@@ -1,6 +1,9 @@
+export { pedido as pedidoMock } from './lib/pedidos/pedido-mock';
+
 export { Neumatico } from './lib/Neumatico';
 export * from './lib/utils';
 
+export { type Item } from './lib/pedidos/Item';
 export { type Pedido } from './lib/pedidos/Pedido';
 export { type PedidoRequest } from './lib/pedidos/PedidoRequest';
 export { type ContactInfo } from './lib/pedidos/ContactInfo';

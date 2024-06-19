@@ -74,9 +74,12 @@ function Content({ children }: any) {
         />
       </head>
       <body>
-        <select onChange={(e) => dispatch(setTheme(e.target.value))}>
+        <select
+          onChange={(e) => dispatch(setTheme(e.target.value))}
+          defaultValue={theme}
+        >
           {themes.map((s) => (
-            <option key={s} value={s} selected={s === theme ? true : false}>
+            <option key={s} value={s}>
               {s}
             </option>
           ))}

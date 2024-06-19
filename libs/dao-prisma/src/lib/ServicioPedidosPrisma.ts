@@ -18,7 +18,7 @@ export class ServicioPedidosPrisma {
       return it;
     });
 
-    const ped = await prisma.pedido.create({
+    const ped = await prisma.dAOPedido.create({
       data: {
         createdAt: new Date(),
         estado: 'pendiente',
@@ -32,16 +32,16 @@ export class ServicioPedidosPrisma {
       },
     });
 
-    const p: Pedido = {
-      name: ped.name,
-      email: ped.email,
-      estado: ped.estado,
-      coments: ped.coments || '',
-      phone: ped.phone,
-      status: ped.estado,
-    };
+    const pedidox = await prisma.dAOPedido.findFirstOrThrow({
+      where: {
+        id: ped.id,
+      },
+      include: {
+        items: true,
+      },
+    });
 
-    return p;
+    return pedidox as any as Pedido;
   }
   constructor(public cart: Cart, public contact: ContactInfo) {}
 }
