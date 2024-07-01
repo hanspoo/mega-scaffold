@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
-import styles from '../styles/Home.module.css';
-import { Button } from 'react-daisyui';
+import { Button, Card } from 'react-daisyui';
 
 export default function ProfileView() {
   return (
@@ -11,6 +10,10 @@ export default function ProfileView() {
           <button>Back to Home</button>
         </Link>
         <h1 className="p-3">Bienvenido</h1>
+        <Card>
+          <h1>300</h1>
+        </Card>
+
         <Button>
           <Link href="/denuncias">Denuncias</Link>
         </Button>
