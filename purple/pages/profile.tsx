@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import styles from '../styles/Home.module.css';
-import { Button } from '@/components/ui/button';
+import { Button } from 'react-daisyui';
 
 export default function ProfileView() {
   return (
