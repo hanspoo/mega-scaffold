@@ -2,7 +2,11 @@ import { getToken } from 'next-auth/jwt';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-const getDataFromUserInfo = (req: NextApiRequest, res: NextApiResponse, token: string) => {
+const getDataFromUserInfo = (
+  req: NextApiRequest,
+  res: NextApiResponse,
+  token: string
+) => {
   const userInfoEndpoint = `${process.env.ZITADEL_ISSUER}/oidc/v1/userinfo`;
 
   return fetch(userInfoEndpoint, {

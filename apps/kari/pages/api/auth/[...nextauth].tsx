@@ -12,7 +12,9 @@ async function refreshAccessToken(token: JWT): Promise<JWT> {
       token_endpoint_auth_method: 'none',
     });
 
-    const { refresh_token, access_token, expires_at } = await client.refresh(token.refreshToken as string);
+    const { refresh_token, access_token, expires_at } = await client.refresh(
+      token.refreshToken as string
+    );
 
     return {
       ...token,
