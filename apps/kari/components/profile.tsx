@@ -65,7 +65,7 @@ function AvatarUsuario({ user, scope }: { user: any; scope: string }) {
         <li>
           <button
             className="btn btn-secondary btn-sm"
-            onClick={() => signOut()}
+            onClick={() => signOut({ callbackUrl: '/' })}
           >
             Cerrar sesión
           </button>
@@ -79,7 +79,7 @@ function SinSesion() {
   return (
     <div className="flex items-center">
       <button
-        className="btn btn-secondary btn-sm"
+        className="btn btn-primary btn-sm"
         onClick={() =>
           signIn('zitadel', {
             callbackUrl: 'http://localhost:3000/admin',

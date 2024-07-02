@@ -13,13 +13,11 @@ export default function Home() {
             <a href="#"> Tipos de denuncias</a>.
           </p>
           <button className="mb-6 btn btn-primary">Ingresar Denuncia</button>
-          <p className="mb-2">
-            Tu denuncia puede ayudar a otros en la misma situación.
-          </p>
-          <p>
-            Si estás muy preocupado por tu anonimato, puedes ingresar a está
-            página desde una ventana privada o de incógnito de tu navegador.
-          </p>
+          <div className="mb-2 font-thin text-sm">
+            Recuerda: Tu denuncia puede ayudar a otros en la misma situación. Si
+            estás muy preocupado por tu anonimato, puedes ingresar a está página
+            desde una ventana privada o de incógnito de tu navegador.
+          </div>
         </div>
       </div>
     </div>

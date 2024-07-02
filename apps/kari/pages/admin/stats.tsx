@@ -1,6 +1,8 @@
-export function Stats() {
+import { WithClassName } from '@coba/components';
+
+export function Stats({ className = '' }: WithClassName) {
   return (
-    <div className="stats shadow">
+    <div className={`stats shadow ${className}`}>
       <div className="stat">
         <div className="stat-figure text-primary">
           <svg
