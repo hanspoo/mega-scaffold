@@ -1,57 +1,9 @@
-# Freecommerce
+# kari-ws
 
-An ecommerce from scratch with a modern tech stack:
+Hola qué tal muchachos miren acá en este repositorio: la matriz del proyecto construido en un workspace de nx.
 
-- nx
-- react
-- nextjs
-- tailwind
-- daisyui
-- typescript
+Quedan vestigios aun de coba, el repo nx que use como plantilla aprovechando que estaba con nextjs, daisyui y prisma con postgreSQL.
 
-Until know we have a working anonymous shopping cart persisted using redux and redis.
-The plan is to make a multi tenancy ecommerce.
+La app kari, es la app next, adaptado del la POC de zitadel con next. En la carpeta zitadel server esta el zitadel.
 
-```
-git clone https://github.com/hanspoo/freecommerce
-cd freecommerce
-```
-
-Start redis with docker:
-
-```
-cd docker/
-docker compose -f redis.yml up
-```
-
-Booot up dev env in another terminal:
-
-```
-npm install
-npm run dev
-```
-
-Test in the browser:
-
-http://localhost:3000
-
-## PostgreSQL
-
-Se requiere una base de datos postgresql, las sigueintes son las variables de entorno que deben ir en .env.local;
-
-```
-PG_PASS=123456
-PG_USER=myuser
-PG_HOST=localhost
-PG_DATABASE=mydatabase
-```
-
-## Prisma
-
-Refrescar el cliente y parchar la base de datos
-
-```
-nx run dao-prisma:prisma-generate
-nx run dao-prisma:prisma-push
-
-```
+Es un ensamblaje de las piezas que tenemos pensado en esta arquitectura, a las 19 las revisamos,

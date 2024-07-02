@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nx dev coba --hostname 0.0.0.0",
-    "build": "nx build coba",
-    "start": "nx start coba"
+    "dev": "nx dev kari --hostname 0.0.0.0",
+    "build": "nx build kari",
+    "start": "nx start kari"
   },
   "private": true,
   "dependencies": {
