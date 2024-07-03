@@ -2,23 +2,29 @@
 
 Hello everyone here sharing this small core for new projects, it makes work together the next technologies:
 
--nx
--nextjs
--zitadel
--prisma
--postgreSQL
--resend
--tailwind
--daisyui
+- nx
+- nextjs
+- zitadel
+- prisma
+- postgreSQL
+- resend
+- tailwind
+- daisyui
 
 It has a public and admin zone, admin zone managed with zitadel.
+
 In the public zone you can post articles and in the admin zone you display and manage them.
+
 When posting an article an email is sent to the author.
+
 The articles get stored via prisma in postgreSQL.
+
 Zitadel using postgres as database.
 
+## Starting
+
 ```
-git clone ..
+git clone https://github.com/hanspoo/mega-scaffold
 cd mega-scaffold
 npm install
 ```
