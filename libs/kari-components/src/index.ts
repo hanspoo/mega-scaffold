@@ -1,3 +1,7 @@
+export { Layout } from './lib/public/layout';
+
+export { LandingHome } from './lib/public/landing';
+
 export { CorreoDenunciante } from './lib/mail/CorreoDenunciante';
 
 export { AdminLayout } from './lib/pages/admin/admin-layout';

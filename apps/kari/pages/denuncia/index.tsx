@@ -1,5 +1,5 @@
 import { FormDenuncia } from '@coba/kari-components';
-import { Layout } from '../layout';
+import { Layout } from '@coba/kari-components';
 
 export default function Denuncia() {
   return <FormDenuncia />;

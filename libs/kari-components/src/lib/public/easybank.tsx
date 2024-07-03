@@ -70,7 +70,7 @@ export function Easybank() {
           <div className="container flex flex-col-reverse gap-20 max-w-screen-xl mx-auto pt-[4em] lg:min-h-screen lg:items-center lg:flex-row">
             {/* left col */}
             <div className="flex flex-col gap-6 content-center items-start lg:h-100 lg:w-1/2 xl:w-2/5">
-              <h1 className="text-4xl md:text-5xl text-center mx-auto lg:text-left lg:mx-0 load-hidden animate-fade-in">
+              <h1 className="text-4xl md:text-4xl text-center mx-auto lg:text-left lg:mx-0 load-hidden animate-fade-in">
                 Next generation digital banking
               </h1>
               <p className="text-center lg:text-left lg:w-4/5 load-hidden animate-fade-in animate-delay-200">

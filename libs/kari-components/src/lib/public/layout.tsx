@@ -1,5 +1,6 @@
-import { Footer, Navbar } from '@coba/kari-components';
 import Head from 'next/head';
+import { Navbar } from './navbar';
+import { Footer } from './footer';
 
 export function Layout({ children }: React.PropsWithChildren) {
   return (
