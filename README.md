@@ -62,13 +62,19 @@ RESEND_API_KEY=1c7061a0-bf70-48dd-a0ed-a989340d9474
 RESEND_FROM=xxxx@resend.dev
 ```
 
-## Run zitadel server, first modify run.sh with your configuration.
+## Run zitadel server
+
+Remember to modify run.sh with your configuration first.
 
 ```
 cd zitadel-server
 ./run.sh
 ```
 
-# Todo
+## Todo
 
 Configure JWT validation in server side.
+
+## Apologies
+
+We have not finished the translations, so it's mostly spanglish right now.
