@@ -1,8 +1,9 @@
 import { Resend } from 'resend';
 
 import { render } from '@react-email/render';
-import { CorreoDenunciante } from '@coba/components';
+
 import { Denuncia } from '@coba/api-interfaces';
+import { CorreoDenunciante } from '@coba/kari-components';
 
 const resend = new Resend('re_Lq9sXJ9x_MGR7EY2oC1ToxPkqH393ZHDG');
 

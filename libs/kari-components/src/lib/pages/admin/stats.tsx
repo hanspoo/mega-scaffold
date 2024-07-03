@@ -1,4 +1,4 @@
-import { WithClassName } from '@coba/components';
+import { WithClassName } from '../../util/WithClassName';
 
 export function Stats({ className = '' }: WithClassName) {
   return (

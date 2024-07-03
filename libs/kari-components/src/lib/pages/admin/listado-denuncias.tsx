@@ -1,5 +1,5 @@
-import { WithClassName } from '@coba/components';
 import { ShieldCheckIcon } from '@heroicons/react/24/solid';
+import { WithClassName } from '../../util/WithClassName';
 
 export function ListadoDenuncias({ className = '' }: WithClassName) {
   return (

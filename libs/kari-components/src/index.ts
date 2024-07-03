@@ -1,3 +1,5 @@
+export { CorreoDenunciante } from './lib/mail/CorreoDenunciante';
+
 export { AdminLayout } from './lib/pages/admin/admin-layout';
 
 export { AdminNavbar } from './lib/pages/admin/admin-navbar';
