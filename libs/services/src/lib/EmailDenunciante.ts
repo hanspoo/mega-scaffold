@@ -12,7 +12,7 @@ export class EmailDenunciante {
     return resend.emails.send({
       from: 'onboarding@resend.dev',
       to: this.denuncia.email,
-      subject: `Tu Pédido de Neumáticos en ZonaCoba`,
+      subject: `Tu denuncia en komplaints`,
       html: render(CorreoDenunciante({ denuncia: this.denuncia })),
     });
   }
