@@ -1,1 +1,2 @@
-export { PedidoMailerService } from './lib/PedidoMailerService';
+
+export { DenunciaMailerService}  from "./lib/DenunciaMailerService"

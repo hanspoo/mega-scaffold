@@ -1,1 +1,1 @@
-export { ServicioPedidosPrisma } from './lib/ServicioPedidosPrisma';
+export { ServicioDenunciasPrisma } from './lib/ServicioDenunciasPrisma';

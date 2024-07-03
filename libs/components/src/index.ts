@@ -1,4 +1,4 @@
-export { CorreoComprador } from './lib/CorreoComprador';
+export { CorreoDenunciante } from './lib/CorreoDenunciante';
 
 export { SeccionCheckout } from './lib/checkout/SeccionCheckout';
 export { type WithClassName } from './lib/utils/WithClassName';

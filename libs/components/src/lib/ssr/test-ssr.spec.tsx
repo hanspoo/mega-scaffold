@@ -1,6 +1,6 @@
 import React from 'react';
 import { pedido } from './pedido-mock';
-import { CorreoComprador } from '../CorreoComprador';
+import { CorreoComprador } from '../CorreoDenunciante';
 import { renderToString } from 'react-dom/server';
 
 describe('RSC', () => {

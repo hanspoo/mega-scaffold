@@ -7,7 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model DAOPedido {
+model DAODenuncia {
   id         String    @id @default(uuid())
   email      String
   name       String
@@ -18,19 +18,19 @@ model DAOPedido {
   phone      String
   items      DAOItem[]
 
-  @@map("pedido")
+  @@map("denuncia")
 }
 
 model DAOItem {
-  id         String    @id @default(uuid())
+  id         String      @id @default(uuid())
   idItem     String
   name       String
   quantity   Int
   value      Float
-  pedidoId   String
-  createdAt  DateTime  @default(now()) @db.Timestamptz(6)
-  modifiedAt DateTime  @default(now()) @db.Timestamptz(6)
-  pedido     DAOPedido @relation(fields: [pedidoId], references: [id])
+  denunciaId String
+  createdAt  DateTime    @default(now()) @db.Timestamptz(6)
+  modifiedAt DateTime    @default(now()) @db.Timestamptz(6)
+  denuncia   DAODenuncia @relation(fields: [denunciaId], references: [id])
 
   @@map("item")
 }

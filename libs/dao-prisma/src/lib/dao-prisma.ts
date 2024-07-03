@@ -14,8 +14,8 @@ console.log(DB_URL);
 const prisma = new PrismaClient();
 
 export async function daoPrisma() {
-  await prisma.pedido.deleteMany();
-  const pedido = await prisma.pedido.create({
+  await prisma.denuncia.deleteMany();
+  const denuncia = await prisma.denuncia.create({
     data: {
       name: 'Alice',
       email: 'alice@prisma.io',
@@ -24,7 +24,7 @@ export async function daoPrisma() {
       phone: '123',
     },
   });
-  return pedido;
+  return denuncia;
 }
 
 daoPrisma()

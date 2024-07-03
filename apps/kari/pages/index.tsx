@@ -1,4 +1,5 @@
 import { Layout } from './layout';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -12,7 +13,9 @@ export default function Home() {
             ley karin, delitos financieros, nepotismo, etc, más información en:
             <a href="#"> Tipos de denuncias</a>.
           </p>
-          <button className="mb-6 btn btn-primary">Ingresar Denuncia</button>
+          <button className="mb-6 btn btn-primary">
+            <Link href="denuncia">Ingresar Denuncia</Link>
+          </button>
           <div className="mb-2 font-thin text-sm">
             Recuerda: Tu denuncia puede ayudar a otros en la misma situación. Si
             estás muy preocupado por tu anonimato, puedes ingresar a está página
