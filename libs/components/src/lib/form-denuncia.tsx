@@ -44,7 +44,7 @@ export const FormDenuncia = () => {
     // handleShow();
     const req: CrearDenunciaRequest = values;
     axios
-      .post('/api/denuncias', req)
+      .post('/api/nueva-denuncia', req)
       .then((response) => {
         setTimeout(() => setDenuncia(response.data), MILIS);
         // handleShow();

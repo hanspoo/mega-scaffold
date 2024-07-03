@@ -4,7 +4,7 @@ import useSWR from 'swr';
 import { PropsWithChildren } from 'react';
 
 import { AdminNavbar } from './admin-navbar';
-import { Footer } from '../../public/footer';
+import { Footer } from '../public/footer';
 
 const loadData = (url: string) =>
   fetch(url).then((resp) => {

@@ -1,7 +1,7 @@
 import { CrearDenunciaRequest, Denuncia } from '@coba/api-interfaces';
 import { PrismaClient } from '@prisma/client';
 
-export class ServicioDenunciasPrisma {
+export class ServicioNuevasDenuncias {
   async crearDenuncia(): Promise<Denuncia> {
     const { name, phone, coments, email } = this.data;
 

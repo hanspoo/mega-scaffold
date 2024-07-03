@@ -1,6 +1,10 @@
 import { Hero } from 'react-daisyui';
 
-import { AdminLayout, ListadoDenuncias, Stats } from '@coba/components';
+import {
+  AdminLayout,
+  ContainerListadoDenuncias,
+  Stats,
+} from '@coba/components';
 
 export default function AdminZone() {
   return (
@@ -10,7 +14,7 @@ export default function AdminZone() {
       </Hero>
 
       <div className="mb-12">
-        <ListadoDenuncias />
+        <ContainerListadoDenuncias />
       </div>
     </div>
   );

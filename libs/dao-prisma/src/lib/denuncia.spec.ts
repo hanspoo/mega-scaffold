@@ -1,5 +1,5 @@
 import { Cart, ContactInfo } from '@coba/api-interfaces';
-import { ServicioDenunciasPrisma } from './ServicioDenunciasPrisma';
+import { ServicioDenunciasPrisma } from './ServicioNuevasDenuncias';
 import { PrismaClient } from '@prisma/client';
 
 process.env['DATABASE_URL'] = 'postgresql://julian:hp8270@localhost:5432/coba';

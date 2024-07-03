@@ -1,5 +1,5 @@
 import { BuildingLibraryIcon } from '@heroicons/react/24/solid';
-import Profile from '../pages/admin/profile';
+import Profile from '../admin/profile';
 import Link from 'next/link';
 
 export function Navbar({ conLogin = true }: { conLogin?: boolean }) {
