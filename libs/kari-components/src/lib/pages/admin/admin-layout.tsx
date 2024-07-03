@@ -1,10 +1,10 @@
 import { signIn, useSession } from 'next-auth/react';
 
 import useSWR from 'swr';
-import { AdminNavbar } from './admin-navbar';
-import { Footer } from '../../components/footer';
 import { PropsWithChildren } from 'react';
-import { Hero } from 'react-daisyui';
+
+import { AdminNavbar } from './admin-navbar';
+import { Footer } from '../../public/footer';
 
 const loadData = (url: string) =>
   fetch(url).then((resp) => {
@@ -46,10 +46,10 @@ function TheLayout({
   scope,
 }: PropsWithChildren<{ user: any; scope: string }>) {
   return (
-    <div className="flex flex-col justify-between h-screen">
+    <div className="flex flex-col justify-between h-screen ">
       <div>
         <AdminNavbar />
-        {children}
+        <div className="max-w-[1200px] m-auto">{children}</div>
       </div>
 
       <Footer />
@@ -59,24 +59,31 @@ function TheLayout({
 
 function SinSesion() {
   return (
-    <div className="hero bg-base-200 min-h-screen">
-      <div className="hero-content text-center">
-        <div className="max-w-md">
-          <h1 className="text-5xl font-bold">Administración</h1>
-          <p className="py-6">Debe iniciar sesión para continuar</p>
+    <div className="flex flex-col justify-between h-screen">
+      <div>
+        <AdminNavbar />
+        <div className="hero min-h-[600px]">
+          <div className="hero-content text-center">
+            <div className="max-w-md">
+              <h1 className="text-5xl font-bold">Administración</h1>
+              <p className="py-6">Debe iniciar sesión para continuar</p>
 
-          <button
-            className="btn btn-primary"
-            onClick={() =>
-              signIn('zitadel', {
-                callbackUrl: 'http://localhost:3000/admin',
-              })
-            }
-          >
-            Iniciar sesión
-          </button>
+              <button
+                className="btn btn-primary"
+                onClick={() =>
+                  signIn('zitadel', {
+                    callbackUrl: 'http://localhost:3000/admin',
+                  })
+                }
+              >
+                Iniciar sesión
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

@@ -1,11 +1,10 @@
 import { Formik, Form, Field, useField } from 'formik';
 import { useState } from 'react';
-import { Alert, Button, Hero, Modal } from 'react-daisyui';
+import { Alert } from 'react-daisyui';
 import axios from 'axios';
 import * as Yup from 'yup';
 import { Loading } from './util/loading';
 import { CrearDenunciaRequest, Denuncia } from '@coba/api-interfaces';
-import { ModalFormDenuncia } from './modal-denuncias';
 
 const MyTextArea = (props: any) => {
   const [field, meta] = useField(props);

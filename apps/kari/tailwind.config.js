@@ -4,6 +4,7 @@ const { join } = require('path');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    '../libs/kari-components/src/lib/**/*.tsx',
     join(
       __dirname,
       '{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}'

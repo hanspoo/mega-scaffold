@@ -1,11 +1,8 @@
 # dao-prisma
 
-This library was generated with [Nx](https://nx.dev).
+## actualizara cliente y base de datos
 
-## Building
-
-Run `nx build dao-prisma` to build the library.
-
-## Running unit tests
-
-Run `nx test dao-prisma` to execute the unit tests via [Jest](https://jestjs.io).
+```
+nx prisma-generate dao-prisma
+nx prisma-push dao-prisma
+```

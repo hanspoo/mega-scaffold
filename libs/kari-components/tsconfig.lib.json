@@ -20,5 +20,12 @@
     "src/**/*.spec.jsx",
     "src/**/*.test.jsx"
   ],
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
+  "include": [
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "../../apps/kari/pages/denuncia/index.tsx",
+    "src/lib/pages/admin/admin-layout.tsx"
+  ]
 }
