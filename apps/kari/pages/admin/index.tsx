@@ -1,6 +1,6 @@
 import { Hero } from 'react-daisyui';
 
-import { AdminLayout, ListadoDenuncias, Stats } from '@coba/kari-components';
+import { AdminLayout, ListadoDenuncias, Stats } from '@coba/components';
 
 export default function AdminZone() {
   return (

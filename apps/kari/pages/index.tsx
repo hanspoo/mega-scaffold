@@ -1,4 +1,4 @@
-import { LandingHome, Layout } from '@coba/kari-components';
+import { LandingHome, Layout } from '@coba/components';
 
 export default function Home() {
   return <LandingHome />;
