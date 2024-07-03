@@ -1,20 +1,20 @@
 import { useEffect, useState } from 'react';
 
 import axios from 'axios';
-import { Denuncia } from '@coba/api-interfaces';
+import { Article } from '@mega-scaffold/api-interfaces';
 
-import { ListadoDenuncias } from './listado-denuncias';
+import { ListadoArticles } from './listado-articles';
 import { Loading } from '../util/loading';
 
-export function ContainerListadoDenuncias() {
+export function ContainerListadoArticles() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [data, setData] = useState<Denuncia[]>();
+  const [data, setData] = useState<Article[]>();
 
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`/api/denuncias`)
+      .get(`/api/articles`)
       .then((response) => {
         setData(response.data);
         setLoading(false);
@@ -30,5 +30,5 @@ export function ContainerListadoDenuncias() {
 
   if (!data) return <p>Error interno</p>;
 
-  return <ListadoDenuncias denuncias={data} />;
+  return <ListadoArticles articles={data} />;
 }

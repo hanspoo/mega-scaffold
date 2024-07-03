@@ -1,11 +1,11 @@
 {
-  "name": "@coba/source",
+  "name": "@hanspoo/mega-scaffold",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nx dev kari --hostname 0.0.0.0",
-    "build": "nx build kari",
-    "start": "nx start kari"
+    "dev": "nx dev mega --hostname 0.0.0.0",
+    "build": "nx build mega",
+    "start": "nx start mega"
   },
   "private": true,
   "dependencies": {

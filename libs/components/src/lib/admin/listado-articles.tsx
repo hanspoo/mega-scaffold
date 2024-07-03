@@ -1,26 +1,26 @@
 import { ShieldCheckIcon } from '@heroicons/react/24/solid';
-import { Denuncia } from '@coba/api-interfaces';
+import { Article } from '@mega-scaffold/api-interfaces';
 
-type ListadoDenunciasProps = {
-  denuncias: Denuncia[];
+type ListadoArticlesProps = {
+  articles: Article[];
 };
 
-export function ListadoDenuncias({ denuncias }: ListadoDenunciasProps) {
+export function ListadoArticles({ articles }: ListadoArticlesProps) {
   return (
     <div className={`overflow-x-auto`}>
       <table className="table">
         {/* head */}
         <thead>
           <tr>
-            <th>Denuncia</th>
+            <th>Article</th>
             <th className="hidden md:table-cell">Sucursal</th>
             <th className="hidden md:table-cell">Fecha</th>
             <th>Estado</th>
           </tr>
         </thead>
         <tbody>
-          {denuncias.map((row) => (
-            <FilaDenuncia denuncia={row} />
+          {articles.map((row) => (
+            <FilaArticle article={row} />
           ))}
         </tbody>
       </table>
@@ -28,8 +28,8 @@ export function ListadoDenuncias({ denuncias }: ListadoDenunciasProps) {
   );
 }
 
-function FilaDenuncia({ denuncia }: { denuncia: Denuncia }) {
-  const { coments, email, name, phone } = denuncia;
+function FilaArticle({ article }: { article: Article }) {
+  const { coments, email, name, phone } = article;
 
   return (
     <tr>

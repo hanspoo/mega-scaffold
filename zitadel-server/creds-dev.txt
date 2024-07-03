@@ -1,5 +1,0 @@
-Client Secret
-
-Keep your client secret at a safe place as it will disappear once the dialog is closed.
-ClientId: 273368787674293279@denuncias
-ClientSecret: z4slTzhjNHQfQlobVbwXGRNmoPZpFbCPBTidMV87Jyu4nwXQcEQyVpe7xyjjkD0v

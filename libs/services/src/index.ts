@@ -1,2 +1,2 @@
 
-export { DenunciaMailerService}  from "./lib/DenunciaMailerService"
+export { ArticleMailerService}  from "./lib/ArticleMailerService"

@@ -17,14 +17,14 @@
     "baseUrl": ".",
     "paths": {
       "@/components": ["libs/desde-algolia/src/lib"],
-      "@coba/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@coba/components": ["libs/components/src/index.ts"],
-      "@coba/dao-prisma": ["libs/dao-prisma/src/index.ts"],
-      "@coba/desde-algolia": ["libs/desde-algolia/src/index.ts"],
-      "@coba/local-daisy": ["libs/local-daisy/src/index.ts"],
-      "@coba/mail-utils": ["libs/mail-utils/src/index.ts"],
-      "@coba/redux-store": ["libs/redux-store/src/index.ts"],
-      "@coba/services": ["libs/services/src/index.ts"]
+      "@mega-scaffold/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@mega-scaffold/components": ["libs/components/src/index.ts"],
+      "@mega-scaffold/dao-prisma": ["libs/dao-prisma/src/index.ts"],
+      "@mega-scaffold/desde-algolia": ["libs/desde-algolia/src/index.ts"],
+      "@mega-scaffold/local-daisy": ["libs/local-daisy/src/index.ts"],
+      "@mega-scaffold/mail-utils": ["libs/mail-utils/src/index.ts"],
+      "@mega-scaffold/redux-store": ["libs/redux-store/src/index.ts"],
+      "@mega-scaffold/services": ["libs/services/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

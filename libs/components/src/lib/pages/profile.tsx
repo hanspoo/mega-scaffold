@@ -15,7 +15,7 @@ export default function ProfileView() {
         </Card>
 
         <Button>
-          <Link href="/denuncias">Denuncias</Link>
+          <Link href="/articles">Articles</Link>
         </Button>
       </div>
       <footer className="p-3 bg-sky-300">Footer</footer>

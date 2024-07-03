@@ -4,14 +4,14 @@ import { Alert } from 'react-daisyui';
 import axios from 'axios';
 import * as Yup from 'yup';
 import { Loading } from './util/loading';
-import { CrearDenunciaRequest, Denuncia } from '@coba/api-interfaces';
+import { CrearArticleRequest, Article } from '@mega-scaffold/api-interfaces';
 
 const MyTextArea = (props: any) => {
   const [field, meta] = useField(props);
   return <textarea {...field} {...props} />;
 };
 
-const DenunciaSchema = Yup.object().shape({
+const ArticleSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Muy corto')
     .max(50, 'Muy largo')
@@ -28,10 +28,10 @@ const DenunciaSchema = Yup.object().shape({
 type Props = {};
 
 const MILIS = 5000;
-export const FormDenuncia = () => {
+export const FormArticle = () => {
   const [enviando, setEnviando] = useState(false);
   // const { Dialog, handleShow } = Modal.useDialog();
-  const [denuncia, setDenuncia] = useState<Denuncia>();
+  const [article, setArticle] = useState<Article>();
   const [error, setError] = useState('');
 
   function submitForm(values: {
@@ -42,11 +42,11 @@ export const FormDenuncia = () => {
   }) {
     setEnviando(true);
     // handleShow();
-    const req: CrearDenunciaRequest = values;
+    const req: CrearArticleRequest = values;
     axios
-      .post('/api/nueva-denuncia', req)
+      .post('/api/nueva-article', req)
       .then((response) => {
-        setTimeout(() => setDenuncia(response.data), MILIS);
+        setTimeout(() => setArticle(response.data), MILIS);
         // handleShow();
       })
       .catch((error) => {
@@ -58,14 +58,14 @@ export const FormDenuncia = () => {
       });
   }
 
-  if (denuncia)
+  if (article)
     return (
       <div className="hero my-20 mb-60">
         <div className="hero-content text-center">
           <div className="max-w-md">
-            <h1 className="text-3xl font-bold">Denuncia ingresada</h1>
+            <h1 className="text-3xl font-bold">Article ingresada</h1>
             <p className="py-6">
-              Estimado {denuncia.name}, hemos ingresado tu denuncia con el #
+              Estimado {article.name}, hemos ingresado tu article con el #
               xxxxx
             </p>
             <button className="btn btn-primary">Revisar pasos a seguir</button>
@@ -76,7 +76,7 @@ export const FormDenuncia = () => {
 
   return (
     <div className="my-10 px-2 max-w-screen-lg m-auto">
-      <h1 className="my-2 mb-4 font-bold text-2xl">Ingresar Denuncia</h1>
+      <h1 className="my-2 mb-4 font-bold text-2xl">Ingresar Article</h1>
 
       <Formik
         initialValues={{
@@ -85,7 +85,7 @@ export const FormDenuncia = () => {
           phone: '',
           email: '',
         }}
-        validationSchema={DenunciaSchema}
+        validationSchema={ArticleSchema}
         onSubmit={(values) => {
           submitForm(values);
           console.log({ values });
@@ -95,7 +95,7 @@ export const FormDenuncia = () => {
           <Form className="flex flex-col">
             <div className="mb-6">
               Completa la información y presiona Enviar. Se enviará un correo de
-              confirmación con los datos de la denuncia.
+              confirmación con los datos de la article.
             </div>
             {enviando &&
               (error ? (

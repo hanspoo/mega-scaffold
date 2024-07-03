@@ -6,8 +6,8 @@ export function Layout({ children }: React.PropsWithChildren) {
   return (
     <div className="flex h-screen flex-col justify-between">
       <Head>
-        <title>Canal de denuncias</title>
-        <meta name="description" content="Canal de denuncias" />
+        <title>Canal de articles</title>
+        <meta name="description" content="Canal de articles" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

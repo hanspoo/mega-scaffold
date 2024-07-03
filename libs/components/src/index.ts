@@ -2,17 +2,17 @@ export { Layout } from './lib/public/layout';
 
 export { LandingHome } from './lib/public/landing';
 
-export { CorreoDenunciante } from './lib/mail/CorreoDenunciante';
+export { CorreoArticlente } from './lib/mail/CorreoArticlente';
 
 export { AdminLayout } from './lib/admin/admin-layout';
 
 export { AdminNavbar } from './lib/admin/admin-navbar';
 
-export { ListadoDenuncias } from './lib/admin/listado-denuncias';
-export { ContainerListadoDenuncias } from './lib/admin/container-listado-denuncias';
+export { ListadoArticles } from './lib/admin/listado-articles';
+export { ContainerListadoArticles } from './lib/admin/container-listado-articles';
 export { Stats } from './lib/admin/stats';
 
 export { Footer } from './lib/public/footer';
 export { Navbar } from './lib/public/navbar';
 
-export { FormDenuncia } from './lib/form-denuncia';
+export { FormArticle } from './lib/form-article';

@@ -1,6 +1,6 @@
 FROM node:20-alpine
-COPY . /coba
-WORKDIR /coba
+COPY . /mega-scaffold
+WORKDIR /mega-scaffold
 RUN npm ci
 RUN npm run build
 EXPOSE 3000

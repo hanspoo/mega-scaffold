@@ -1,4 +1,4 @@
-import { LandingHome, Layout } from '@coba/components';
+import { LandingHome, Layout } from '@mega-scaffold/components';
 
 export default function Home() {
   return <LandingHome />;

@@ -25,7 +25,7 @@
     "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "../../apps/kari/pages/denuncia/index.tsx",
+    "../../apps/kari/pages/article/index.tsx",
     "src/lib/pages/admin/admin-layout.tsx"
   ]
 }

@@ -5,7 +5,7 @@ const db = process.env['NODE_ENV'] || 'dev';
 let DB_URL = process.env['DATABASE_URL'];
 
 if (!DB_URL) {
-  DB_URL = `postgresql://julian:hp8270@localhost:5432/coba-${db}`;
+  DB_URL = `postgresql://julian:hp8270@localhost:5432/mega-scaffold-${db}`;
   process.env['DATABASE_URL'] = DB_URL;
 }
 
@@ -14,8 +14,8 @@ console.log(DB_URL);
 const prisma = new PrismaClient();
 
 export async function daoPrisma() {
-  await prisma.denuncia.deleteMany();
-  const denuncia = await prisma.denuncia.create({
+  await prisma.article.deleteMany();
+  const article = await prisma.article.create({
     data: {
       name: 'Alice',
       email: 'alice@prisma.io',
@@ -24,7 +24,7 @@ export async function daoPrisma() {
       phone: '123',
     },
   });
-  return denuncia;
+  return article;
 }
 
 daoPrisma()

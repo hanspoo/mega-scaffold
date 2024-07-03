@@ -1,8 +1,8 @@
-import { Cart, ContactInfo } from '@coba/api-interfaces';
-import { ServicioDenunciasPrisma } from './ServicioNuevasDenuncias';
+import { Cart, ContactInfo } from '@mega-scaffold/api-interfaces';
+import { ServicioArticlesPrisma } from './ServicioNuevasArticles';
 import { PrismaClient } from '@prisma/client';
 
-process.env['DATABASE_URL'] = 'postgresql://julian:hp8270@localhost:5432/coba';
+process.env['DATABASE_URL'] = 'postgresql://julian:hp8270@localhost:5432/mega-scaffold';
 
 const cart: Cart = {
   createdAt: 1718230424451,
@@ -27,7 +27,7 @@ const contact: ContactInfo = {
   email: 'hans@welinux.cl',
 };
 
-describe('crear denuncia directo en prisma', () => {
+describe('crear article directo en prisma', () => {
   it('debe crear al menos un item', async () => {
     const prisma = new PrismaClient();
     const item = {
@@ -38,7 +38,7 @@ describe('crear denuncia directo en prisma', () => {
     };
 
     const items = [item];
-    const ped = await prisma.denuncia.create({
+    const ped = await prisma.article.create({
       data: {
         createdAt: new Date(),
         estado: 'pendiente',
@@ -52,15 +52,15 @@ describe('crear denuncia directo en prisma', () => {
   });
 });
 
-describe('crear denuncias', () => {
+describe('crear articles', () => {
   it('crea con mismo email', async () => {
-    const servicio = new ServicioDenunciasPrisma(cart, contact);
-    const denuncia = await servicio.crearDenuncia();
-    expect(denuncia.name).toBe(contact.name);
+    const servicio = new ServicioArticlesPrisma(cart, contact);
+    const article = await servicio.crearArticle();
+    expect(article.name).toBe(contact.name);
   });
   it.skip('crea todos los items', async () => {
-    const servicio = new ServicioDenunciasPrisma(cart, contact);
-    const denuncia = await servicio.crearDenuncia();
-    expect(denuncia).toBe(contact.name);
+    const servicio = new ServicioArticlesPrisma(cart, contact);
+    const article = await servicio.crearArticle();
+    expect(article).toBe(contact.name);
   });
 });

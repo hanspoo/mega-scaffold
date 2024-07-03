@@ -2,9 +2,9 @@ import { Hero } from 'react-daisyui';
 
 import {
   AdminLayout,
-  ContainerListadoDenuncias,
+  ContainerListadoArticles,
   Stats,
-} from '@coba/components';
+} from '@mega-scaffold/components';
 
 export default function AdminZone() {
   return (
@@ -14,7 +14,7 @@ export default function AdminZone() {
       </Hero>
 
       <div className="mb-12">
-        <ContainerListadoDenuncias />
+        <ContainerListadoArticles />
       </div>
     </div>
   );

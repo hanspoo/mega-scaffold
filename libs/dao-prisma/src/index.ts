@@ -1,3 +1,3 @@
-export { DenunciasFinder } from './lib/DenunciasFinder';
+export { ArticlesFinder } from './lib/ArticlesFinder';
 
-export { ServicioNuevasDenuncias } from './lib/ServicioNuevasDenuncias';
+export { ServicioNuevasArticles } from './lib/ServicioNuevasArticles';

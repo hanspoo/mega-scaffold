@@ -1,13 +1,13 @@
-import { CrearDenunciaRequest, Denuncia } from '@coba/api-interfaces';
+import { CrearArticleRequest, Article } from '@mega-scaffold/api-interfaces';
 import { PrismaClient } from '@prisma/client';
 
-export class ServicioNuevasDenuncias {
-  async crearDenuncia(): Promise<Denuncia> {
+export class ServicioNuevasArticles {
+  async crearArticle(): Promise<Article> {
     const { name, phone, coments, email } = this.data;
 
     const prisma = new PrismaClient();
 
-    const ped = await prisma.dAODenuncia.create({
+    const ped = await prisma.dAOArticle.create({
       data: {
         createdAt: new Date(),
         estado: 'pendiente',
@@ -18,7 +18,7 @@ export class ServicioNuevasDenuncias {
       },
     });
 
-    const denunciax = await prisma.dAODenuncia.findFirstOrThrow({
+    const articlex = await prisma.dAOArticle.findFirstOrThrow({
       where: {
         id: ped.id,
       },
@@ -27,7 +27,7 @@ export class ServicioNuevasDenuncias {
       },
     });
 
-    return denunciax as any as Denuncia;
+    return articlex as any as Article;
   }
-  constructor(public data: CrearDenunciaRequest) {}
+  constructor(public data: CrearArticleRequest) {}
 }

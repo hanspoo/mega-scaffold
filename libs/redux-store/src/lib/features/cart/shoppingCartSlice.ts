@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Cart, CartItem } from '@coba/api-interfaces';
+import { Cart, CartItem } from '@mega-scaffold/api-interfaces';
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const fetchShoppingCart = createAsyncThunk('api/cart', () => {
