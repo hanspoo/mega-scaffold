@@ -12,6 +12,8 @@ declare global {
       PG_USER: string;
       PG_HOST: string;
       PG_DATABASE: string;
+      RESEND_API_KEY: string;
+      RESEND_FROM: string;
     }
   }
 }
