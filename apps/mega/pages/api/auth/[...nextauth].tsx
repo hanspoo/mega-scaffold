@@ -8,7 +8,7 @@ async function refreshAccessToken(token: JWT): Promise<JWT> {
     const issuer = await Issuer.discover(process.env.ZITADEL_ISSUER ?? '');
     const client = new issuer.Client({
       client_id: process.env.ZITADEL_CLIENT_ID || '',
-      redirect_uris: ['http://localhost:3000/api/auth/callback/zitadel'],
+      redirect_uris: [process.env.ZITADEL_REDIRECT_URI],
       token_endpoint_auth_method: 'none',
     });
 

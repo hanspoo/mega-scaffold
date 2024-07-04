@@ -17,6 +17,8 @@ declare global {
       ZITADEL_CLIENT_ID: string;
       ZITADEL_CLIENT_SECRET: string;
       ZITADEL_ISSUER: string;
+
+      ZITADEL_REDIRECT_URI: string;
     }
   }
 }
