@@ -31,14 +31,11 @@ npm install
 
 ## Databases
 
-Create two databases, one for zitadel and the other for the app, for example:
+Create the database for our data, in this case article and item tables.
 
 ```
 createdb mega-scaffold
-createdb zitadel
 ```
-
-Then replace database credentials in .env and in zitadel-server/run.sh.
 
 ## Generate prisma client
 
@@ -67,12 +64,36 @@ RESEND_FROM=onboarding@resend.dev
 
 ## Run zitadel server
 
-Remember to modify run.sh with your configuration first.
-
 ```
 cd zitadel-server
-./run.sh
+docker compose up
 ```
+
+Zitadel Web Admin is at:
+
+`http://localhost:8080/ui/console`
+
+## Start the nextjs project
+
+`nx dev mega`
+
+Open your browser in:
+
+`http://localhost:3000`
+
+Click the button to Create an article.
+
+Click in the footer of the page in administration or go directly to:
+
+`http://localhost:3000/admin`
+
+Login with user and pass:
+
+`zitadel-admin@zitadel.localhost`
+
+and password
+
+`Password1!`
 
 ## Todo
 
