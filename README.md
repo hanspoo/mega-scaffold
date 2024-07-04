@@ -29,6 +29,9 @@ cd mega-scaffold
 npm install
 ```
 
+There is a supporting video, actually in spanish:
+[https://www.youtube.com/watch?v=ofTKnzqMRWk](https://www.youtube.com/watch?v=ofTKnzqMRWk)
+
 ## Databases
 
 Create the database for our data, in this case article and item tables.
