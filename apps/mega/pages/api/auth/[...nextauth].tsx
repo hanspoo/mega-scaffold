@@ -43,6 +43,7 @@ export default NextAuth({
           scope: `openid email profile offline_access`,
         },
       },
+      checks: ['pkce'],
       async profile(profile) {
         return {
           id: profile.sub,
@@ -71,7 +72,7 @@ export default NextAuth({
       // Access token has expired, try to update it
       return refreshAccessToken(token);
     },
-    async session({ session, token: { user, error: tokenError } }) {
+    async session({ session, token: { user, error: tokenError } }: any) {
       session.user = {
         id: user?.id,
         email: user?.email,

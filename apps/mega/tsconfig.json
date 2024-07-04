@@ -24,7 +24,7 @@
     "**/*.js",
     "**/*.jsx",
     "next-env.d.ts",
-    "../../libs/kari-components/src/lib/pages/admin/admin-layout.tsx"
+    "../../types/*.d.ts"
   ],
   "exclude": ["node_modules", "jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
 }
