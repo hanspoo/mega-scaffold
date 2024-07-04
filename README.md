@@ -3,7 +3,7 @@
 Hello everyone here sharing this small core for new projects, it makes work together the next technologies:
 
 - nx
-- nextjs
+- nextjs & next-auth
 - zitadel
 - prisma
 - postgreSQL
@@ -51,15 +51,18 @@ nx prisma-push dao-prisma
 
 ```
 NEXTAUTH_URL=http://localhost:3000
-ZITADEL_CLIENT_ID=1c7061a0-bf70-48dd-a0ed-a989340d9474
-ZITADEL_CLIENT_SECRET=1c7061a0-bf70-48dd-a0ed-a989340d9474
+NEXTAUTH_SECRET=qwertyuioqwertyui
+
+ZITADEL_CLIENT_ID=274419814053775107@kproject
+ZITADEL_CLIENT_SECRET=fa3c7629-2bcf-4416-8d4c-703df13559cb
 ZITADEL_ISSUER=http://localhost:8080
-NEXTAUTH_SECRET=1c7061a0-bf70-48dd-a0ed-a989340d9474
+ZITADEL_REDIRECT_URI=http://localhost:3000/api/auth/callback/zitadel
 
-DATABASE_URL=postgresql://user:pass@localhost:5432/mega-scaffold
+DATABASE_URL=postgresql://postgres:123456@localhost:5432/mega-scaffold
 
-RESEND_API_KEY=1c7061a0-bf70-48dd-a0ed-a989340d9474
-RESEND_FROM=xxxx@resend.dev
+RESEND_API_KEY=ede18da1-dd66-4d96-941e-f50d7b64ec96
+RESEND_FROM=onboarding@resend.dev
+
 ```
 
 ## Run zitadel server
