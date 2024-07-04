@@ -37,13 +37,6 @@ Create the database for our data, in this case article and item tables.
 createdb mega-scaffold
 ```
 
-## Generate prisma client
-
-```
-nx prisma-generate dao-prisma
-nx prisma-push dao-prisma
-```
-
 ## Create .env file in project root:
 
 ```
@@ -62,16 +55,12 @@ RESEND_FROM=onboarding@resend.dev
 
 ```
 
-## Run zitadel server
+## Generate prisma client
 
 ```
-cd zitadel-server
-docker compose up
+nx prisma-generate dao-prisma
+nx prisma-push dao-prisma
 ```
-
-Zitadel Web Admin is at:
-
-`http://localhost:8080/ui/console`
 
 ## Start the nextjs project
 
@@ -83,9 +72,21 @@ Open your browser in:
 
 Click the button to Create an article.
 
-Click in the footer of the page in administration or go directly to:
+If you want the email notification service to work, obtain an API KEY in resend site:
+`https://resend.com/docs/api-reference/api-keys/create-api-key`
 
-`http://localhost:3000/admin`
+And set RESEND_API_KEY in .env file
+
+## Run zitadel server
+
+```
+cd zitadel-server
+docker compose up
+```
+
+Go to Zitadel Web Admin in:
+
+`http://localhost:8080/ui/console`
 
 Login with user and pass:
 
@@ -94,6 +95,25 @@ Login with user and pass:
 and password
 
 `Password1!`
+
+Create an organization, inside it a user. Create a project and inside it, an application, select Web and pkce, copy
+the _client id_ and set the variable:
+
+`ZITADEL_CLIENT_ID`
+
+in the .env file.
+
+Close the session in order to test the full login with Nextjs in the next step.
+
+## Login in Admin Zone
+
+Let's go back to our web app, click in the footer of the page in Administration or go directly to:
+
+`http://localhost:3000/admin`
+
+Use the user just created to log in.
+
+You could have logged in with the zitadel cluster admin too.
 
 ## Todo
 
